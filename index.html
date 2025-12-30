@@ -2,189 +2,499 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Louis Thayer Hills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Louis Thayer Hills — Memorial Exhibition & Art Sale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-  html {
-  background: #2f2f2f;
-}  
-body {
-  background: #fafafa;
-  color: #222;
-  font-family: "Georgia", "Times New Roman", serif;
-  margin: 0;
-}
+    :root {
+      --cream: #f9f6f1;
+      --warm-white: #fefdfb;
+      --charcoal: #2a2826;
+      --warm-gray: #5a5654;
+      --soft-brown: #8b7d6b;
+      --accent-gold: #c9a961;
+      --accent-rust: #a85843;
+      --border-light: rgba(138, 125, 107, 0.2);
+      --shadow-subtle: 0 2px 12px rgba(42, 40, 38, 0.08);
+      --shadow-medium: 0 8px 32px rgba(42, 40, 38, 0.12);
+    }
 
-h1 {
-  text-align: center;
-  font-size: 2.6rem;
-  font-weight: normal;
-  margin-bottom: 10px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-h2 {
-  font-size: 1.4rem;
-  font-weight: normal;
-  margin-top: 50px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-p {
-  max-width: 700px;
-  margin: 16px auto;
-  line-height: 1.6;
-}
+    body {
+      background: linear-gradient(135deg, #e8dfd1 0%, var(--cream) 100%);
+      color: var(--charcoal);
+      font-family: "Work Sans", -apple-system, sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 50px 0;
-}
+    /* Decorative background elements */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(5deg); }
+      66% { transform: translate(-20px, 20px) rotate(-5deg); }
+    }
 
-.gallery img {
-  width: 100%;
-  height: auto;
-  background: #fff;
-  padding: 6px;
-  border: 1px solid #ddd;
-}
+    /* Main container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero section */
+    .hero {
+      background: var(--warm-white);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-medium);
+      padding: 60px 50px;
+      margin-bottom: 60px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-rust));
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 3.6rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--soft-brown);
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--warm-gray);
+    }
+
+    /* Section styling */
+    section {
+      background: var(--warm-white);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-subtle);
+      padding: 40px 45px;
+      margin-bottom: 30px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      animation: fadeInUp 0.8s ease-out backwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+    section:nth-child(5) { animation-delay: 0.4s; }
+    section:nth-child(6) { animation-delay: 0.5s; }
+
+    section:hover {
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-2px);
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent-gold);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--accent-rust);
+    }
+
+    section p {
+      margin-bottom: 18px;
+      color: var(--warm-gray);
+    }
+
+    section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Event card - special styling */
+    .event-card {
+      background: linear-gradient(135deg, var(--accent-rust) 0%, #c97654 100%);
+      color: var(--warm-white);
+      border: none;
+      padding: 50px 45px;
+      animation-delay: 0s;
+    }
+
+    .event-card h2 {
+      color: var(--warm-white);
+      border-bottom-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .event-card h2::after {
+      background: var(--warm-white);
+    }
+
+    .event-card p {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .event-card strong {
+      color: var(--warm-white);
+      font-weight: 500;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .event-details {
+      background: rgba(0, 0, 0, 0.15);
+      padding: 25px;
+      border-radius: 2px;
+      margin-top: 20px;
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    /* Links */
+    a {
+      color: var(--accent-rust);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      border-bottom-color: var(--accent-rust);
+      color: var(--charcoal);
+    }
+
+    .event-card a {
+      color: var(--warm-white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .event-card a:hover {
+      color: var(--accent-gold);
+      border-bottom-color: var(--accent-gold);
+    }
+
+    /* Gallery section */
+    .gallery-section {
+      text-align: center;
+      padding: 50px 45px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border: 8px solid var(--warm-white);
+      box-shadow: var(--shadow-medium);
+      transition: all 0.4s ease;
+      background: var(--warm-white);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03) translateY(-5px);
+      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.2);
+    }
+
+    /* Contact section */
+    .contact-section {
+      background: var(--cream);
+      border: 2px dashed var(--border-light);
+    }
+
+    .contact-block {
+      margin-bottom: 30px;
+    }
+
+    .contact-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-block strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+      margin: 50px 0;
+      border: none;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 25px 60px;
+      }
+
+      .hero {
+        padding: 40px 30px;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      section {
+        padding: 30px 25px;
+      }
+
+      .event-card {
+        padding: 35px 25px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+      }
+    }
+
+    /* Subtle texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        repeating-linear-gradient(
+          0deg,
+          rgba(42, 40, 38, 0.03) 0px,
+          transparent 1px,
+          transparent 2px,
+          rgba(42, 40, 38, 0.03) 3px
+        );
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Louis Thayer Hills</h1>
-
-<p style="text-align:center; max-width: 700px; margin: 20px auto;">
- Louis Thayer Hills (1936–2019) was a prolific Wisconsin artist whose work spanned more than six decades.
- Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, sculptures, paintings, and prints.
- This site honors his artistic legacy and shares information about an upcoming memorial exhibition and art sale, offering collectors 
- the rare chance to acquire original works directly from the estate, with pricing structured to place the work into many hands.
+<div class="container">
   
-</p>
-
-<hr style="margin: 40px 0;">
-
-<h2>Memorial Exhibition & Art Sale</h2>
-
-<p>
-  <strong>Opening Reception:</strong><br>
-  Friday, May 29, 2026 · 5–8pm
-</p>
-
-<p>
-  <strong>Jazz Gallery Center for the Arts</strong><br>
-  926 E Center St<br>
-  Milwaukee, WI 53212<br>
-  (414) 374-4722<br>
-  <a href="mailto:info@jazzgallerycenterforarts.org">
-    info@jazzgallerycenterforarts.org
-  </a>
-</p>
-
-<hr style="margin: 50px 0;">
-<section>
-  <h2>About the Collection</h2>
-  <p>
-    The collection encompasses decades of work across a broad range of media,
-    subjects, and scales. Due to the scope of the estate, this offering includes
-    both intimate works on paper and larger statement pieces suitable for
-    residential, commercial, and hospitality settings.
-  </p>
-  <p>
-    Pricing has been structured to reflect the size and breadth of the collection,
-    with the intention of making original works accessible while respecting the
-    artist’s lifetime of production.
-  </p>
-</section>
-
-<section>
-  <h2>Public Exhibition &amp; Sale</h2>
-  <p>
-    The public memorial exhibition and sale will provide visitors the opportunity
-    to view and acquire original works by Louis Thayer Hills in person. Selected
-    works will be available for purchase throughout the exhibition period.
-  </p>
-  <p>
-    Dates, location, and additional details will be announced prior to the opening.
-  </p>
-</section>
-
-<section>
-  <h2>Trade &amp; Bulk Viewing</h2>
-  <p>
-    Due to the scale of the collection, a dedicated viewing period will be offered
-    for <strong>restaurants, hotels, interior designers, and other commercial
-    buyers</strong> interested in acquiring multiple works.
-  </p>
-  <p>
-    This trade preview allows buyers to select cohesive groupings of original
-    artworks and explore a wide range of sizes and styles well suited for larger
-    spaces. Works are available directly from the artist’s estate, with pricing
-    structured to support volume acquisitions.
-  </p>
-  <p>
-    Trade preview access is available by request. Scheduling details will be
-    shared in advance of the event.
-  </p>
-</section>
-
-<section>
-  <h2>Pricing &amp; Acquisition</h2>
-  <p>
-    Original works will be offered at accessible price points reflecting the size
-    and scope of the estate. The goal of this sale is to place the work into active
-    display — in homes, collections, and public-facing spaces — rather than storage.
-  </p>
-  <p>
-    Both individual collectors and buyers seeking multiple works are welcome.
-  </p>
-</section>
-
-<section>
-  <h2>Inquiries</h2>
-  <p>
-    For information regarding the exhibition, estate sale, or trade preview access,
-    please check back for updates or contact the estate directly.
-  </p>
-  <p>
-    Further details will be released as the event approaches.
-  </p>
-</section>
-
-  <h1>Selected Works</h1>
-
-  <div class="gallery">
-    <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+  <div class="hero">
+    <h1>Louis Thayer Hills</h1>
+    <div class="subtitle">1936 – 2019</div>
+    <p class="hero-text">
+      Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades.
+      Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, 
+      sculptures, paintings, and prints. This site honors his artistic legacy and shares information 
+      about an upcoming memorial exhibition and art sale, offering collectors the rare chance to 
+      acquire original works directly from the estate, with pricing structured to place the work 
+      into many hands.
+    </p>
   </div>
-<hr>
 
-<h2>Contact</h2>
+  <section class="event-card">
+    <h2>Memorial Exhibition & Art Sale</h2>
+    <div class="event-details">
+      <p>
+        <strong>Opening Reception</strong>
+        Friday, May 29, 2026 · 5–8pm
+      </p>
+      <p style="margin-top: 20px;">
+        <strong>Jazz Gallery Center for the Arts</strong>
+        926 E Center St<br>
+        Milwaukee, WI 53212<br>
+        (414) 374-4722<br>
+        <a href="mailto:info@jazzgallerycenterforarts.org">info@jazzgallerycenterforarts.org</a>
+      </p>
+    </div>
+  </section>
 
-<p>
-  <strong>Estate of Louis Thayer Hills</strong><br>
-  For inquiries regarding the artwork, the artist’s legacy, or estate matters:<br>
-  <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
-</p>
+  <section>
+    <h2>About the Collection</h2>
+    <p>
+      The collection encompasses decades of work across a broad range of media, subjects, and scales. 
+      Due to the scope of the estate, this offering includes both intimate works on paper and larger 
+      statement pieces suitable for residential, commercial, and hospitality settings.
+    </p>
+    <p>
+      Pricing has been structured to reflect the size and breadth of the collection, with the intention 
+      of making original works accessible while respecting the artist's lifetime of production.
+    </p>
+  </section>
 
-<p>
-  <strong>Jazz Gallery Center for the Arts</strong><br>
-  926 E Center St<br>
-  Milwaukee, WI 53212<br>
-  (414) 374-4722<br>
-  <a href="mailto:info@jazzgallerycenterforarts.org">
-    info@jazzgallerycenterforarts.org
-  </a><br>
-  <a href="https://jazzgallerycenterforarts.org" target="_blank">
-    jazzgallerycenterforarts.org
-  </a>
-</p>
+  <section>
+    <h2>Public Exhibition & Sale</h2>
+    <p>
+      The public memorial exhibition and sale will provide visitors the opportunity to view and acquire 
+      original works by Louis Thayer Hills in person. Selected works will be available for purchase 
+      throughout the exhibition period.
+    </p>
+    <p>
+      Dates, location, and additional details will be announced prior to the opening.
+    </p>
+  </section>
+
+  <section>
+    <h2>Trade & Bulk Viewing</h2>
+    <p>
+      Due to the scale of the collection, a dedicated viewing period will be offered for 
+      <strong>restaurants, hotels, interior designers, and other commercial buyers</strong> 
+      interested in acquiring multiple works.
+    </p>
+    <p>
+      This trade preview allows buyers to select cohesive groupings of original artworks and explore 
+      a wide range of sizes and styles well suited for larger spaces. Works are available directly 
+      from the artist's estate, with pricing structured to support volume acquisitions.
+    </p>
+    <p>
+      Trade preview access is available by request. Scheduling details will be shared in advance 
+      of the event.
+    </p>
+  </section>
+
+  <section>
+    <h2>Pricing & Acquisition</h2>
+    <p>
+      Original works will be offered at accessible price points reflecting the size and scope of 
+      the estate. The goal of this sale is to place the work into active display — in homes, 
+      collections, and public-facing spaces — rather than storage.
+    </p>
+    <p>
+      Both individual collectors and buyers seeking multiple works are welcome.
+    </p>
+  </section>
+
+  <section>
+    <h2>Inquiries</h2>
+    <p>
+      For information regarding the exhibition, estate sale, or trade preview access, please check 
+      back for updates or contact the estate directly.
+    </p>
+    <p>
+      Further details will be released as the event approaches.
+    </p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="gallery-section">
+    <h2>Selected Works</h2>
+    <div class="gallery">
+      <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+      <!-- Add more images as needed -->
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="contact-section">
+    <h2>Contact</h2>
+    
+    <div class="contact-block">
+      <strong>Estate of Louis Thayer Hills</strong>
+      <p>
+        For inquiries regarding the artwork, the artist's legacy, or estate matters:<br>
+        <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="contact-block">
+      <strong>Jazz Gallery Center for the Arts</strong>
+      <p>
+        926 E Center St<br>
+        Milwaukee, WI 53212<br>
+        (414) 374-4722<br>
+        <a href="mailto:info@jazzgallerycenterforarts.org">info@jazzgallerycenterforarts.org</a><br>
+        <a href="https://jazzgallerycenterforarts.org" target="_blank">jazzgallerycenterforarts.org</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
 
 </body>
 </html>
