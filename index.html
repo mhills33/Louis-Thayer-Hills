@@ -272,7 +272,30 @@
     .gallery a:hover {
       border: none;
     }
+ .gallery-item {
+      display: block;
+    }
 
+    .gallery-caption {
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .artwork-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      font-weight: 400;
+      font-style: italic;
+      display: block;
+    }
+
+    .artwork-details {
+      font-size: 0.85rem;
+      color: var(--soft-brown);
+      margin-top: 4px;
+    }
     .gallery img {
       width: 100%;
       height: auto;
@@ -471,35 +494,82 @@
 
   <div class="divider"></div>
 
-  <section class="gallery-section">
+<section class="gallery-section">
     <h2>Selected Works</h2>
     <div class="gallery">
+      <div class="gallery-item">
         <a href="images/lth-01.jpg" target="_blank">
-        <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-02.jpg" target="_blank">
-        <img src="images/lth-02.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-03.jpg" target="_blank">
-        <img src="images/lth-03.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-04.jpg" target="_blank">
-        <img src="images/lth-04.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-05.jpg" target="_blank">
-        <img src="images/lth-05.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-06.jpg" target="_blank">
-        <img src="images/lth-06.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
-      <a href="images/lth-07.jpg" target="_blank">
-        <img src="images/lth-07.jpg" alt="Artwork by Louis Thayer Hills">
-      </a>
+          <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Portrait Study</span>
+          <div class="artwork-details">Oil on canvas · 1965</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-02.jpg" target="_blank">
+          <img src="images/lth-02.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Abstract Composition</span>
+          <div class="artwork-details">Mixed media · 1972</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-03.jpg" target="_blank">
+          <img src="images/lth-03.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Landscape Series No. 3</span>
+          <div class="artwork-details">Watercolor · 1968</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-04.jpg" target="_blank">
+          <img src="images/lth-04.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Figure Study</span>
+          <div class="artwork-details">Charcoal on paper · 1970</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-05.jpg" target="_blank">
+          <img src="images/lth-05.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Urban Scene</span>
+          <div class="artwork-details">Acrylic · 1975</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-06.jpg" target="_blank">
+          <img src="images/lth-06.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Still Life with Bottles</span>
+          <div class="artwork-details">Oil on board · 1963</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/lth-07.jpg" target="_blank">
+          <img src="images/lth-07.jpg" alt="Artwork by Louis Thayer Hills">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled (Abstract)</span>
+          <div class="artwork-details">Print · 1978</div>
+        </div>
+      </div>
       <!-- Add more images as needed -->
-   
     </div>
   </section>
-
+    
   <div class="divider"></div>
 
   <section class="contact-section">
