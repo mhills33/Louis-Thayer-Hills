@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -261,6 +263,16 @@
       margin-top: 35px;
     }
 
+    .gallery a {
+      display: block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .gallery a:hover {
+      border: none;
+    }
+
     .gallery img {
       width: 100%;
       height: auto;
@@ -268,6 +280,7 @@
       box-shadow: var(--shadow-medium);
       transition: all 0.4s ease;
       background: var(--warm-white);
+      cursor: pointer;
     }
 
     .gallery img:hover {
@@ -461,7 +474,30 @@
   <section class="gallery-section">
     <h2>Selected Works</h2>
     <div class="gallery">
-      <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+      <a href="images/lth-01.jpg" target="_blank">
+        <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-02.jpg" target="_blank">
+        <img src="images/lth-02.jpg" alt="Sculpture by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-03.jpg" target="_blank">
+        <img src="images/lth-03.jpg" alt="Drawing by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-04.jpg" target="_blank">
+        <img src="images/lth-04.jpg" alt="Print by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-05.jpg" target="_blank">
+        <img src="images/lth-05.jpg" alt="Painting by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-06.jpg" target="_blank">
+        <img src="images/lth-06.jpg" alt="Sketch by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-07.jpg" target="_blank">
+        <img src="images/lth-07.jpg" alt="Painting by Louis Thayer Hills">
+      </a>
+      <a href="images/lth-08.jpg" target="_blank">
+        <img src="images/lth-08.jpg" alt="Mixed media by Louis Thayer Hills">
+      </a>
       <!-- Add more images as needed -->
     </div>
   </section>
@@ -495,6 +531,5 @@
 
 </body>
 </html>
+```
 
-</body>
-</html>
