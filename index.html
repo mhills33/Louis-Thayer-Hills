@@ -378,63 +378,54 @@
       background: var(--text-dark);
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 25px;
-      margin-top: 35px;
-    }
 
-    .gallery a {
-      display: block;
-      border: none;
-      cursor: pointer;
-    }
+/* Replace your existing .gallery styles with these: */
 
-    .gallery a:hover {
-      border: none;
-    }
-    
-    .gallery-item {
-      display: block;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns for organized layout */
+  gap: 35px;
+  margin-top: 40px;
+}
 
-    .gallery-caption {
-      margin-top: 12px;
-      text-align: center;
-      line-height: 1.4;
-    }
+.gallery img {
+  width: 100%;
+  height: 280px;  /* Fixed height for uniform appearance */
+  object-fit: cover;  /* Crops images nicely */
+  border: none;  /* REMOVED WHITE BORDER */
+  box-shadow: var(--shadow-medium);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
 
-    .artwork-title {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      font-weight: 400;
-      font-style: italic;
-      display: block;
-    }
+.gallery img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 12px 48px rgba(42, 40, 38, 0.3);
+}
 
-    .artwork-details {
-      font-size: 0.85rem;
-      color: var(--text-dark);
-      margin-top: 4px;
-      opacity: 0.85;
-    }
-    
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border: 8px solid var(--warm-white);
-      box-shadow: var(--shadow-medium);
-      transition: all 0.4s ease;
-      background: var(--warm-white);
-      cursor: pointer;
-    }
+/* LARGER, MORE READABLE CAPTIONS */
+.gallery-caption {
+  margin-top: 18px;
+  text-align: center;
+  line-height: 1.5;
+}
 
-    .gallery img:hover {
-      transform: scale(1.03) translateY(-5px);
-      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.2);
-    }
+.artwork-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;  /* MUCH LARGER */
+  color: var(--text-dark);  /* DARKER COLOR */
+  font-weight: 600;  /* BOLDER */
+  font-style: italic;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.artwork-details {
+  font-size: 1.1rem;  /* MUCH LARGER */
+  color: var(--text-dark);  /* DARKER COLOR */
+  font-weight: 500;  /* BOLDER */
+}
+
 
     /* Contact section - KEEP WARM WHITE WITH BETTER TEXT */
     .contact-section {
@@ -712,10 +703,103 @@
   </section>
 
 </div>
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .gallery img {
+    height: 200px;
+  }
+  
+  .artwork-title {
+    font-size: 1.2rem;
+  }
+  
+  .artwork-details {
+    font-size: 0.95rem;
+  }
+}
+
+
 
 </body>
-</html>
-</body>
-</html>
-```
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  animation: zoomIn 0.3s ease;
+  cursor: default;
+}
+
+@keyframes zoomIn {
+  from { 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 50px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 10000;
+  transition: opacity 0.2s;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 0.7;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
+  max-width: 90%;
+  line-height: 1.4;
+}
 
