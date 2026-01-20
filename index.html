@@ -481,27 +481,30 @@
     }
 /* Sticky contact on left side */
 @media (min-width: 1200px) {
-.contact-section {
-  position: fixed;
-  left: 20px;
-  top: 100px;
-  max-width: 280px;
-  width: 280px;
-  padding: 30px 20px;  /* Add padding */
-  z-index: 100;
-  overflow: hidden;  /* Prevent overflow */
-}
- .contact-section * {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.contact-section a {
-  font-size: 0.9rem;
-} 
+  .contact-section {
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    max-width: 280px;
+    width: 280px;
+    padding: 30px 20px;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .contact-section * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .contact-section a {
+    font-size: 0.9rem;
+  } 
+  
   .container {
     max-width: 900px;
-    margin-left: 350px;  /* Makes room for the fixed contact */
+    margin: 0 auto;  /* Center it */
+    padding-left: 0;
   }
 }
     /* Divider */
