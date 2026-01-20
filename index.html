@@ -515,7 +515,10 @@
       .container {
         padding: 40px 25px 60px;
       }
-
+.event-card a {
+  word-break: break-all;
+  font-size: 0.9rem;
+}
       .hero {
         padding: 40px 30px;
       }
@@ -587,17 +590,53 @@
     height: auto;  /* Keep natural proportions on mobile */
   }
 }
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+}
 
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+}
   </style>
 </head>
-<body>
 
+
+<body>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+  
 <div class="container">
   
 <div class="hero">
     <h1>Louis Thayer Hills</h1>
     <div class="subtitle">1936 – 2019</div>
-    <img src="images/hero-image.jpg" alt="Louis Thayer Hills artwork" class="hero-image">
+    <img onclick="openLightbox(this.src)" src="images/hero-image.jpg" alt="Louis Thayer Hills artwork" class="hero-image">
     <p class="hero-text">
       Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades.
       Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, 
@@ -627,9 +666,9 @@
 
   <!-- Image Row -->
   <div class="image-row">
-    <img src="images/lth-08.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-09.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-13.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src=" src="images/lth-08.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-09.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-13.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
   <section>
@@ -644,9 +683,9 @@
 
   <!-- Image Row -->
   <div class="image-row">
-    <img src="images/lth-11.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-12.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-10.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-11.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-12.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-10.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
   <section>
@@ -669,9 +708,9 @@
 
   <!-- Image Row -->
   <div class="image-row">
-    <img src="images/lth-05.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-15.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-16.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-05.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-15.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-16.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
   <section>
@@ -687,9 +726,9 @@
 
   <!-- Image Row -->
   <div class="image-row">
-    <img src="images/lth-17.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-04.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-14.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-17.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-04.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-14.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
   <section>
@@ -706,9 +745,9 @@
 
   <!-- Image Row -->
   <div class="image-row">
-    <img src="images/lth-02.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-07.jpg" alt="Louis Thayer Hills artwork">
-    <img src="images/lth-01.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-02.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-07.jpg" alt="Louis Thayer Hills artwork">
+    <img onclick="openLightbox(this.src)" src="images/lth-01.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
   <div class="divider"></div>
@@ -717,7 +756,7 @@
     <div class="gallery">
       <div class="gallery-item">
         <a href="images/lth-01.jpg" target="_blank">
-          <img src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-01.jpg" alt="Painting by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Self-Portrait Study</span>
@@ -727,7 +766,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-02.jpg" target="_blank">
-          <img src="images/lth-02.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-02.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Abstract Composition #1</span>
@@ -737,7 +776,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-03.jpg" target="_blank">
-          <img src="images/lth-03.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-03.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching Series No. 1</span>
@@ -747,7 +786,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-04.jpg" target="_blank">
-          <img src="images/lth-04.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-04.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Sculpture Study #3</span>
@@ -757,7 +796,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-05.jpg" target="_blank">
-          <img src="images/lth-05.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-05.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Rio Azul</span>
@@ -767,7 +806,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-06.jpg" target="_blank">
-          <img src="images/lth-06.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-06.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Abstract Landscape #2</span>
@@ -777,7 +816,7 @@
 
       <div class="gallery-item">
         <a href="images/lth-07.jpg" target="_blank">
-          <img src="images/lth-07.jpg" alt="Artwork by Louis Thayer Hills">
+          <img onclick="openLightbox(this.src)" src="images/lth-07.jpg" alt="Artwork by Louis Thayer Hills">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Abstract Acrylic #4</span>
@@ -814,6 +853,23 @@
   </section>
 
 </div>
+</style>
+</head>
+<body>
+
+<!-- all your HTML content -->
+
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightbox-img').src = src;
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+</script>
 
 
 </body>
