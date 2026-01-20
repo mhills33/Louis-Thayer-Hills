@@ -73,13 +73,12 @@
     }
 
     /* Main container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 40px 80px;
-      position: relative;
-      z-index: 1;
-    }
+.container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 320px;  /* Push content right */
+}
 
     /* Hero section */
     .hero {
@@ -482,13 +481,16 @@
     }
 /* Sticky contact on left side */
 @media (min-width: 1200px) {
-  .contact-section {
-    position: fixed;
-    left: 20px;
-    top: 100px;
-    max-width: 280px;
-    z-index: 100;
-  }
+.contact-section {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  max-width: 280px;
+  width: 280px;
+  padding: 30px 20px;  /* Add padding */
+  z-index: 100;
+  overflow: hidden;  /* Prevent overflow */
+}
   
   .container {
     max-width: 900px;
