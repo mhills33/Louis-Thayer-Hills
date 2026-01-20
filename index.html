@@ -480,7 +480,21 @@
       margin-bottom: 10px;
       font-weight: 500;
     }
-
+/* Sticky contact on left side */
+@media (min-width: 1200px) {
+  .contact-section {
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    max-width: 280px;
+    z-index: 100;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin-left: 350px;  /* Makes room for the fixed contact */
+  }
+}
     /* Divider */
     .divider {
       height: 1px;
