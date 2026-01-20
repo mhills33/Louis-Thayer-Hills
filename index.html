@@ -387,12 +387,6 @@
   margin-top: 40px;
   align-items: start;  /* ADD THIS LINE - aligns images to top */
 }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 columns for organized layout */
-  gap: 35px;
-  margin-top: 40px;
-}
 
 .gallery img {
   width: 100%;
@@ -580,8 +574,6 @@
     </div>
   </section>
 
- </section>
-
   <!-- Image Row -->
   <div class="image-row">
     <img src="images/lth-08.jpg" alt="Louis Thayer Hills artwork">
@@ -597,7 +589,7 @@
       to stacks and stacks of etchings/prints on paper, the offerings range from intimate sketch studies to huge statement pieces.
     </p>
   </section>
-</section>
+
 
   <!-- Image Row -->
   <div class="image-row">
@@ -622,7 +614,7 @@
       Trade preview access is available by appointment on Thursday, June 4th, 2026 from 12pm-6pm
     </p>
   </section>
-  </section>
+
 
   <!-- Image Row -->
   <div class="image-row">
@@ -640,7 +632,7 @@
       collections, and public-facing spaces — rather than storage. 
     </p>
   </section>
-  </section>
+
 
   <!-- Image Row -->
   <div class="image-row">
@@ -659,7 +651,7 @@
       Further details will be released as the event approaches.
     </p>
   </section>
-  </section>
+
 
   <!-- Image Row -->
   <div class="image-row">
@@ -803,81 +795,3 @@
 
 
 </body>
-
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  cursor: pointer;
-  animation: fadeIn 0.3s ease;
-}
-
-.lightbox.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.lightbox-content {
-  max-width: 95vw;
-  max-height: 95vh;
-  object-fit: contain;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
-  animation: zoomIn 0.3s ease;
-  cursor: default;
-}
-
-@keyframes zoomIn {
-  from { 
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to { 
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: white;
-  font-size: 50px;
-  font-weight: 300;
-  cursor: pointer;
-  z-index: 10000;
-  transition: opacity 0.2s;
-  line-height: 1;
-}
-
-.lightbox-close:hover {
-  opacity: 0.7;
-}
-
-.lightbox-caption {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  font-size: 1.6rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9);
-  max-width: 90%;
-  line-height: 1.4;
-}
-
