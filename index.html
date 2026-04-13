@@ -145,14 +145,76 @@
       font-weight: 400;
     }
     
-    .hero-image {
+   /* NEW CAROUSEL STYLES - ADD THESE */
+    .hero-carousel {
+      position: relative;
       max-width: 650px;
       width: 100%;
       margin: 30px auto;
-      display: block;
+      overflow: hidden;
       border: 1px solid var(--border-light);
       box-shadow: var(--shadow-subtle);
     }
+
+    .carousel-inner {
+      position: relative;
+      width: 100%;
+      padding-bottom: 66.67%; /* 3:2 aspect ratio, adjust as needed */
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Carousel indicators (dots) */
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--soft-brown);
+      opacity: 0.3;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      padding: 0;
+    }
+
+    .carousel-indicator.active {
+      opacity: 1;
+      background: var(--accent-gold);
+      transform: scale(1.2);
+    }
+
+    .carousel-indicator:hover {
+      opacity: 0.6;
+    }
+    /* END OF NEW CAROUSEL STYLES */
+    
     
     /* Section styling - DEFAULT */
     section {
@@ -636,7 +698,28 @@
 <div class="hero">
     <h1>Louis Thayer Hills</h1>
     <div class="subtitle">1935 – 2019</div>
-    <img onclick="openLightbox(this.src)" src="images/hero-image.jpg" alt="Louis Thayer Hills artwork" class="hero-image">
+ <div class="hero-carousel">
+  <div class="carousel-inner">
+    <div class="carousel-slide active">
+      <img src="image1.jpg" alt="Louis Hills artwork 1">
+    </div>
+    <div class="carousel-slide">
+      <img src="image2.jpg" alt="Louis Hills artwork 2">
+    </div>
+    <div class="carousel-slide">
+      <img src="image3.jpg" alt="Louis Hills artwork 3">
+    </div>
+    <div class="carousel-slide">
+      <img src="image4.jpg" alt="Louis Hills artwork 4">
+    </div>
+  </div>
+  <div class="carousel-indicators">
+    <button class="carousel-indicator active" data-slide="0"></button>
+    <button class="carousel-indicator" data-slide="1"></button>
+    <button class="carousel-indicator" data-slide="2"></button>
+    <button class="carousel-indicator" data-slide="3"></button>
+  </div>
+</div>
     <p class="hero-text">
     Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades, creating abstract paintings and prints inspired by the landscapes and natural beauty of his beloved home state. Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, sculptures, paintings, and prints deeply rooted in southeastern Wisconsin.
 Hills' abstract artistic evolution mirrored the essence of Wisconsin itself—from the dark, brooding tones inspired by winter forests in his early oil paintings to the explosive colors drawn from prairie wildflowers and autumn foliage in his later acrylics. His mixed media works often incorporated natural materials and textures found in the Wisconsin countryside, translating the spirit of the land into bold, abstract expressions.
@@ -918,7 +1001,53 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
 }
 </script>
+<script>
+(function() {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  const totalSlides = slides.length;
+  const slideInterval = 4000;
+  let autoplayInterval;
 
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    slides[index].classList.add('active');
+    indicators[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    let next = (currentSlide + 1) % totalSlides;
+    showSlide(next);
+  }
+
+  function startAutoplay() {
+    autoplayInterval = setInterval(nextSlide, slideInterval);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      stopAutoplay();
+      showSlide(index);
+      startAutoplay();
+    });
+  });
+
+  startAutoplay();
+
+  const carousel = document.querySelector('.hero-carousel');
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+})();
+</script>
+</body>
+</html>
 </body>
 </html>
 
