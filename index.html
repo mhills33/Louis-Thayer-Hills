@@ -19,17 +19,20 @@
       --border-light: rgba(138, 125, 107, 0.2);
       --shadow-subtle: 0 2px 12px rgba(42, 40, 38, 0.08);
       --shadow-medium: 0 8px 32px rgba(42, 40, 38, 0.12);
-      
-      /* New muted palette colors */
+
+      /* Muted palette colors */
       --sage-green: #b5c4a8;
       --dusty-blue: #a4b5c4;
       --warm-taupe: #c4b5a8;
       --soft-lavender: #b8afc4;
       --muted-coral: #d4a59a;
-      
+
       /* Text colors for better readability */
       --text-dark: #2a2826;
       --text-medium: #3d3a38;
+
+      /* Sold ribbon */
+      --sold-red: #a81c1c;
     }
 
     * {
@@ -52,7 +55,6 @@
       overflow-x: hidden;
     }
 
-    /* Decorative background elements */
     body::before {
       content: '';
       position: fixed;
@@ -72,16 +74,16 @@
       66% { transform: translate(-20px, 20px) rotate(-5deg); }
     }
 
-/* Main container */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  margin-left: auto;  /* ADD THIS LINE */
-  margin-right: auto; /* ADD THIS LINE */
-  padding: 60px 40px 80px;
-  position: relative;
-  z-index: 1;
-}
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 60px 40px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
     /* Hero section */
     .hero {
       background: var(--warm-white);
@@ -106,14 +108,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
@@ -146,8 +142,8 @@
       color: var(--text-dark);
       font-weight: 400;
     }
-    
-   /* NEW CAROUSEL STYLES - ADD THESE */
+
+    /* Carousel */
     .hero-carousel {
       position: relative;
       max-width: 650px;
@@ -161,7 +157,7 @@
     .carousel-inner {
       position: relative;
       width: 100%;
-      padding-bottom: 66.67%; /* 3:2 aspect ratio, adjust as needed */
+      padding-bottom: 66.67%;
     }
 
     .carousel-slide {
@@ -174,10 +170,7 @@
       transition: opacity 1s ease-in-out;
     }
 
-    .carousel-slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
+    .carousel-slide.active { opacity: 1; z-index: 1; }
 
     .carousel-slide img {
       width: 100%;
@@ -186,7 +179,6 @@
       display: block;
     }
 
-    /* Carousel indicators (dots) */
     .carousel-indicators {
       display: flex;
       justify-content: center;
@@ -212,12 +204,8 @@
       transform: scale(1.2);
     }
 
-    .carousel-indicator:hover {
-      opacity: 0.6;
-    }
-    /* END OF NEW CAROUSEL STYLES */
-    
-    
+    .carousel-indicator:hover { opacity: 0.6; }
+
     /* Section styling - DEFAULT */
     section {
       background: var(--warm-white);
@@ -230,11 +218,11 @@
       animation: fadeInUp 0.8s ease-out backwards;
     }
 
-    section:nth-child(2) { animation-delay: 0.1s; }
-    section:nth-child(3) { animation-delay: 0.2s; }
-    section:nth-child(4) { animation-delay: 0.3s; }
-    section:nth-child(5) { animation-delay: 0.4s; }
-    section:nth-child(6) { animation-delay: 0.5s; }
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.2s; }
+    section:nth-of-type(4) { animation-delay: 0.3s; }
+    section:nth-of-type(5) { animation-delay: 0.4s; }
+    section:nth-of-type(6) { animation-delay: 0.5s; }
 
     section:hover {
       box-shadow: var(--shadow-medium);
@@ -268,11 +256,9 @@
       font-weight: 400;
     }
 
-    section p:last-child {
-      margin-bottom: 0;
-    }
+    section p:last-child { margin-bottom: 0; }
 
-    /* Event card - KEEP YOUR BEAUTIFUL ORANGE! */
+    /* Event card */
     .event-card {
       background: linear-gradient(135deg, var(--accent-rust) 0%, #c97654 100%);
       color: var(--warm-white);
@@ -286,9 +272,7 @@
       border-bottom-color: rgba(255, 255, 255, 0.3);
     }
 
-    .event-card h2::after {
-      background: var(--warm-white);
-    }
+    .event-card h2::after { background: var(--warm-white); }
 
     .event-card p {
       color: rgba(255, 255, 255, 0.95);
@@ -311,78 +295,83 @@
       border-left: 3px solid var(--accent-gold);
     }
 
-    /* About the Collection - SAGE GREEN */
-    section:nth-of-type(2) {
-      background: var(--sage-green);
-    }
-    
-    section:nth-of-type(2) h2 {
-      color: var(--text-dark);
-      border-bottom-color: rgba(42, 40, 38, 0.25);
-    }
-    
-    section:nth-of-type(2) h2::after {
-      background: var(--text-dark);
-    }
-    
-    section:nth-of-type(2) p {
-      color: var(--text-dark);
+    /* Stats strip — recap numbers on the event card */
+    .stats-strip {
+      display: flex;
+      gap: 18px;
+      margin-top: 25px;
+      flex-wrap: wrap;
     }
 
-    /* Trade & Hospitality - DUSTY BLUE */
-    section:nth-of-type(3) {
-      background: var(--dusty-blue);
-    }
-    
-    section:nth-of-type(3) h2 {
-      color: var(--text-dark);
-      border-bottom-color: rgba(42, 40, 38, 0.25);
-    }
-    
-    section:nth-of-type(3) h2::after {
-      background: var(--text-dark);
-    }
-    
-    section:nth-of-type(3) p,
-    section:nth-of-type(3) strong {
-      color: var(--text-dark);
+    .stat {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.12);
+      border-left: 3px solid var(--accent-gold);
+      padding: 18px 10px;
+      border-radius: 2px;
     }
 
-    /* Pricing & Acquisition - WARM TAUPE */
-    section:nth-of-type(4) {
-      background: var(--warm-taupe);
-    }
-    
-    section:nth-of-type(4) h2 {
-      color: var(--text-dark);
-      border-bottom-color: rgba(42, 40, 38, 0.25);
-    }
-    
-    section:nth-of-type(4) h2::after {
-      background: var(--text-dark);
-    }
-    
-    section:nth-of-type(4) p {
-      color: var(--text-dark);
+    .stat-number {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.2rem;
+      color: var(--warm-white);
+      font-weight: 600;
+      line-height: 1.1;
     }
 
-    /* Inquiries - SOFT LAVENDER */
-    section:nth-of-type(5) {
-      background: var(--soft-lavender);
+    .stat-label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 6px;
     }
-    
-    section:nth-of-type(5) h2 {
-      color: var(--text-dark);
-      border-bottom-color: rgba(42, 40, 38, 0.25);
+
+    /* Video section */
+    .video-section p { max-width: 650px; }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      margin-top: 10px;
+      box-shadow: var(--shadow-medium);
+      background: var(--charcoal);
     }
-    
-    section:nth-of-type(5) h2::after {
-      background: var(--text-dark);
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
-    
-    section:nth-of-type(5) p {
-      color: var(--text-dark);
-    }
+
+    /* Color-coded section variants (class based, not position based) */
+    .section-sage { background: var(--sage-green); }
+    .section-sage h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    .section-sage h2::after { background: var(--text-dark); }
+    .section-sage p { color: var(--text-dark); }
+
+    .section-taupe { background: var(--warm-taupe); }
+    .section-taupe h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    .section-taupe h2::after { background: var(--text-dark); }
+    .section-taupe p { color: var(--text-dark); }
+
+    .section-lavender { background: var(--soft-lavender); }
+    .section-lavender h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    .section-lavender h2::after { background: var(--text-dark); }
+    .section-lavender p { color: var(--text-dark); }
+
+    section.size-series-section { background: var(--dusty-blue); }
+    section.size-series-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    section.size-series-section h2::after { background: var(--text-dark); }
+    section.size-series-section p { color: var(--text-dark); }
 
     /* Links */
     a {
@@ -407,133 +396,175 @@
       color: var(--accent-gold);
       border-bottom-color: var(--accent-gold);
     }
-    
-    /* Links on colored backgrounds */
-    section:nth-of-type(2) a,
-    section:nth-of-type(3) a,
-    section:nth-of-type(4) a,
-    section:nth-of-type(5) a {
+
+    .section-sage a,
+    .section-taupe a,
+    .section-lavender a,
+    section.size-series-section a {
       color: var(--text-dark);
       border-bottom: 1px solid rgba(42, 40, 38, 0.3);
     }
-    
-    section:nth-of-type(2) a:hover,
-    section:nth-of-type(3) a:hover,
-    section:nth-of-type(4) a:hover,
-    section:nth-of-type(5) a:hover {
+
+    .section-sage a:hover,
+    .section-taupe a:hover,
+    .section-lavender a:hover,
+    section.size-series-section a:hover {
       border-bottom-color: var(--text-dark);
       opacity: 0.8;
     }
 
-    /* Gallery section - MUTED CORAL */
+    /* Gallery section (Selected Works + Size Series share this) */
     .gallery-section {
       text-align: center;
       padding: 50px 45px;
       background: var(--muted-coral);
     }
-    
+
     .gallery-section h2 {
       color: var(--text-dark);
       border-bottom-color: rgba(42, 40, 38, 0.25);
     }
-    
-    .gallery-section h2::after {
-      background: var(--text-dark);
+
+    .gallery-section h2::after { background: var(--text-dark); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 40px;
+      align-items: start;
     }
 
+    .gallery-item { position: relative; }
 
-/* Replace your existing .gallery styles with these: */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-  margin-top: 40px;
-  align-items: start;  /* ADD THIS LINE - aligns images to top */
-}
+    .gallery-item a {
+      position: relative;
+      display: block;
+      overflow: hidden;
+    }
 
-.gallery img {
-  width: 100%;
-  height: auto;  /* Let images keep their actual proportions */
-  object-fit: contain;  /* Shows full image without cropping */
-  border: none;
-  box-shadow: var(--shadow-medium);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  display: block;
-}
-.gallery img:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 12px 48px rgba(42, 40, 38, 0.3);
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border: none;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: block;
+    }
 
-/* LARGER, MORE READABLE CAPTIONS */
-.gallery-caption {
-  margin-top: 18px;
-  text-align: center;
-  line-height: 1.5;
-}
+    .gallery img:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.3);
+    }
 
-.artwork-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.5rem;  /* MUCH LARGER */
-  color: var(--text-dark);  /* DARKER COLOR */
-  font-weight: 600;  /* BOLDER */
-  font-style: italic;
-  display: block;
-  margin-bottom: 8px;
-}
+    .gallery-caption {
+      margin-top: 18px;
+      text-align: center;
+      line-height: 1.5;
+    }
 
-.artwork-details {
-  font-size: 1.1rem;  /* MUCH LARGER */
-  color: var(--text-dark);  /* DARKER COLOR */
-  font-weight: 500;  /* BOLDER */
-}
+    .artwork-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-style: italic;
+      display: block;
+      margin-bottom: 8px;
+    }
 
-/* Image row between sections */
-.image-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 40px 0;
-}
-.image-row img {
-  width: 100%;
-  height: auto;  /* Shows actual proportions */
-  object-fit: contain;
-  box-shadow: var(--shadow-medium);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: block;
-}
+    .artwork-details {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
 
+    /* SOLD ribbon — shared look, two contexts:
+       - small gallery thumbnails: add class="sold" to the .gallery-item div
+       - full-size carousel slides: add class="sold" to the .carousel-slide div */
+    .gallery-item.sold a::after,
+    .carousel-slide.sold::after {
+      content: 'SOLD';
+      position: absolute;
+      background: var(--sold-red);
+      color: #fff;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      z-index: 5;
+      pointer-events: none;
+    }
 
-.image-row img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 48px rgba(42, 40, 38, 0.25);
-}
+    .gallery-item.sold a::after {
+      top: 18px;
+      left: -38px;
+      width: 160px;
+      font-size: 0.95rem;
+      padding: 6px 0;
+      transform: rotate(-38deg);
+    }
 
-    /* Contact section - KEEP WARM WHITE WITH BETTER TEXT */
+    .carousel-slide.sold::after {
+      top: 28px;
+      left: -55px;
+      width: 230px;
+      font-size: 1.3rem;
+      padding: 10px 0;
+      transform: rotate(-38deg);
+    }
+
+    @media (max-width: 768px) {
+      .carousel-slide.sold::after {
+        top: 18px;
+        left: -45px;
+        width: 180px;
+        font-size: 1rem;
+        padding: 7px 0;
+      }
+    }
+
+    /* Image row between sections */
+    .image-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .image-row img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: block;
+    }
+
+    .image-row img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.25);
+    }
+
+    /* Contact section */
     .contact-section {
       background: var(--warm-white);
       border: 2px dashed var(--border-light);
     }
-    
-    .contact-section h2 {
-      color: var(--text-dark);
-    }
-    
+
+    .contact-section h2 { color: var(--text-dark); }
+
     .contact-section p {
       color: var(--text-medium);
       font-weight: 400;
     }
 
-    .contact-block {
-      margin-bottom: 30px;
-    }
-
-    .contact-block:last-child {
-      margin-bottom: 0;
-    }
+    .contact-block { margin-bottom: 30px; }
+    .contact-block:last-child { margin-bottom: 0; }
 
     .contact-block strong {
       font-family: "Cormorant Garamond", Georgia, serif;
@@ -543,30 +574,50 @@
       margin-bottom: 10px;
       font-weight: 500;
     }
-/* Sticky contact on left side */
-@media (min-width: 1200px) {
-  .contact-section {
-    position: fixed;
-    left: 20px;
-    top: 100px;
-    max-width: 280px;
-    width: 280px;
-    padding: 30px 20px;
-    z-index: 100;
-    overflow: hidden;
-  }
-  
-  .contact-section * {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .contact-section a {
-    font-size: 0.9rem;
-  } 
-  
-}
-    /* Divider */
+
+    @media (min-width: 1200px) {
+      .contact-section {
+        position: fixed;
+        left: 20px;
+        top: 100px;
+        max-width: 280px;
+        width: 280px;
+        padding: 30px 20px;
+        z-index: 100;
+        overflow: hidden;
+      }
+      .contact-section * { word-wrap: break-word; overflow-wrap: break-word; }
+      .contact-section a { font-size: 0.9rem; }
+    }
+
+    /* Video floats on the right, but only once the viewport is wide enough
+       that it won't crowd the centered 900px column (needs more room than
+       the 1200px breakpoint used for the contact box, since both float at once). */
+    @media (min-width: 1400px) {
+      .video-section {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        max-width: 300px;
+        width: 300px;
+        padding: 22px 20px;
+        z-index: 100;
+        overflow: hidden;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+      .video-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+      }
+      .video-section p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        max-width: none;
+      }
+    }
+
     .divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border-light), transparent);
@@ -574,197 +625,144 @@
       border: none;
     }
 
-    /* Responsive design */
     @media (max-width: 768px) {
-      .container {
-        padding: 40px 25px 60px;
-      }
-.event-card a {
-  word-break: break-all;
-  font-size: 0.9rem;
-}
-      .hero {
-        padding: 40px 30px;
-      }
-
-      h1 {
-        font-size: 2.6rem;
-      }
-
-      section {
-        padding: 30px 25px;
-      }
-
-      .event-card {
-        padding: 35px 25px;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-      }
+      .container { padding: 40px 25px 60px; }
+      .event-card a { word-break: break-all; font-size: 0.9rem; }
+      .hero { padding: 40px 30px; }
+      h1 { font-size: 2.6rem; }
+      section { padding: 30px 25px; }
+      .event-card { padding: 35px 25px; }
+      .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
+      .stats-strip { gap: 12px; }
     }
 
-    /* Subtle texture overlay */
     body::after {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        repeating-linear-gradient(
-          0deg,
-          rgba(42, 40, 38, 0.03) 0px,
-          transparent 1px,
-          transparent 2px,
-          rgba(42, 40, 38, 0.03) 3px
-        );
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        rgba(42, 40, 38, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(42, 40, 38, 0.03) 3px
+      );
       pointer-events: none;
       opacity: 0.3;
       z-index: 0;
     }
+
     @media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
-  .gallery img {
-    height: auto;  /* Keep natural proportions on mobile */
-  }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .gallery img { height: auto; }
+      .artwork-title { font-size: 1.2rem; }
+      .artwork-details { font-size: 0.95rem; }
+    }
 
-  .artwork-title {
-    font-size: 1.2rem;
-  }
-  
-  .artwork-details {
-    font-size: 0.95rem;
-  }
-}
+    @media (max-width: 768px) {
+      .image-row { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .image-row img { height: auto; }
+    }
 
-@media (max-width: 768px) {
-  .image-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .image-row img {
-    height: auto;  /* Keep natural proportions on mobile */
-  }
-}
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-}
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
 
-.lightbox.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    .lightbox.active { display: flex; align-items: center; justify-content: center; }
 
-.lightbox-content {
-  max-width: 95vw;
-  max-height: 95vh;
-  object-fit: contain;
-}
+    .lightbox-content { max-width: 95vw; max-height: 95vh; object-fit: contain; }
 
-.lightbox-close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
-}
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 50px;
+      cursor: pointer;
+    }
   </style>
 </head>
-
 
 <body>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
   <img class="lightbox-content" id="lightbox-img">
 </div>
-  
+
 <div class="container">
-  
-<div class="hero">
+
+  <div class="hero">
     <h1>Louis Thayer Hills</h1>
     <div class="subtitle">1935 – 2019</div>
-    
-    <div class="hero-carousel">
-     <div class="carousel-inner">
-  <div class="carousel-slide active">
-    <img src="images/blue-marker-framed-drawing.jpg" alt="Louis Hills artwork 1">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/hero-image_jpg.png" alt="Louis Hills artwork 2">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/hero-image_self_portrait_working.jpg" alt="Louis Hills artwork 3">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/louis_young.jpg" alt="Louis Hills artwork 4">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/lth-portrait-2-flag70s.jpg" alt="Louis Hills artwork 5">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/modern_gallery_lobby_with_abstract_art.png" alt="Louis Hills artwork 6">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/modern_minimalist_living_room_design.png" alt="Louis Hills artwork 7">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/purple_marker_framed_drawing.jpg" alt="Louis Hills artwork 8">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/acrylic on stretched canvas 1980s 24 x 36.jpg" alt="Louis Hills artwork 9">
-  </div>
-  <div class="carousel-slide">
-    <img src="images/Elegant_night_at_a_fine_restaurant.png" alt="Louis Hills artwork 10">
-  </div>
-</div>
-    <div class="carousel-indicators">
-  <button class="carousel-indicator active" data-slide="0"></button>
-  <button class="carousel-indicator" data-slide="1"></button>
-  <button class="carousel-indicator" data-slide="2"></button>
-  <button class="carousel-indicator" data-slide="3"></button>
-  <button class="carousel-indicator" data-slide="4"></button>
-  <button class="carousel-indicator" data-slide="5"></button>
-  <button class="carousel-indicator" data-slide="6"></button>
-  <button class="carousel-indicator" data-slide="7"></button>
-  <button class="carousel-indicator" data-slide="8"></button>
-  <button class="carousel-indicator" data-slide="9"></button>
-</div>
-    </div>
-    
-    <p class="hero-text">
-    Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades, creating abstract paintings and prints inspired by the landscapes and natural beauty of his beloved home state. Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, sculptures, paintings, and prints deeply rooted in southeastern Wisconsin.
-Hills' abstract artistic evolution mirrored the essence of Wisconsin itself—from the dark, brooding tones inspired by winter forests in his early oil paintings to the explosive colors drawn from prairie wildflowers and autumn foliage in his later acrylics. His mixed media works often incorporated natural materials and textures found in the Wisconsin countryside, translating the spirit of the land into bold, abstract expressions.
-Working from his home in southeastern Wisconsin, which he shared with his wife Kay, Hills drew continuous inspiration from the rolling farmlands, woodlands, and rural character that defined the region. His abstract compositions distilled the energy and color of Wisconsin's natural landscape into dynamic visual expressions, creating a unique artistic legacy as a Wisconsin abstract artist.
-This site honors his artistic legacy and shares information about an upcoming memorial exhibition and art sale, offering collectors the rare chance to acquire original works directly from the estate, with pricing structured to place the work into many hands.
-   </p>
-  </div>  <!-- This closes the hero div -->
 
+    <div class="hero-carousel">
+      <div class="carousel-inner">
+        <div class="carousel-slide active"><img src="images/blue-marker-framed-drawing.jpg" alt="Louis Hills artwork 1"></div>
+        <div class="carousel-slide"><img src="images/hero-image_jpg.png" alt="Louis Hills artwork 2"></div>
+        <div class="carousel-slide"><img src="images/hero-image_self_portrait_working.jpg" alt="Louis Hills artwork 3"></div>
+        <div class="carousel-slide"><img src="images/louis_young.jpg" alt="Louis Hills artwork 4"></div>
+        <div class="carousel-slide sold"><img src="images/lth-portrait-2-flag70s.jpg" alt="Louis Hills artwork 5"></div>
+        <div class="carousel-slide"><img src="images/modern_gallery_lobby_with_abstract_art.png" alt="Louis Hills artwork 6"></div>
+        <div class="carousel-slide"><img src="images/modern_minimalist_living_room_design.png" alt="Louis Hills artwork 7"></div>
+        <div class="carousel-slide"><img src="images/purple_marker_framed_drawing.jpg" alt="Louis Hills artwork 8"></div>
+        <div class="carousel-slide sold"><img src="images/acrylic on stretched canvas 1980s 24 x 36.jpg" alt="Louis Hills artwork 9"></div>
+        <div class="carousel-slide"><img src="images/Elegant_night_at_a_fine_restaurant.png" alt="Louis Hills artwork 10"></div>
+      </div>
+      <div class="carousel-indicators">
+        <button class="carousel-indicator active" data-slide="0"></button>
+        <button class="carousel-indicator" data-slide="1"></button>
+        <button class="carousel-indicator" data-slide="2"></button>
+        <button class="carousel-indicator" data-slide="3"></button>
+        <button class="carousel-indicator" data-slide="4"></button>
+        <button class="carousel-indicator" data-slide="5"></button>
+        <button class="carousel-indicator" data-slide="6"></button>
+        <button class="carousel-indicator" data-slide="7"></button>
+        <button class="carousel-indicator" data-slide="8"></button>
+        <button class="carousel-indicator" data-slide="9"></button>
+      </div>
+    </div>
+
+    <p class="hero-text">
+      Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades, creating abstract paintings and prints inspired by the landscapes and natural beauty of his beloved home state. Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, sculptures, paintings, and prints deeply rooted in southeastern Wisconsin.
+      Hills' abstract artistic evolution mirrored the essence of Wisconsin itself—from the dark, brooding tones inspired by winter forests in his early oil paintings to the explosive colors drawn from prairie wildflowers and autumn foliage in his later acrylics. His mixed media works often incorporated natural materials and textures found in the Wisconsin countryside, translating the spirit of the land into bold, abstract expressions.
+      Working from his home in southeastern Wisconsin, which he shared with his wife Kay, Hills drew continuous inspiration from the rolling farmlands, woodlands, and rural character that defined the region. His abstract compositions distilled the energy and color of Wisconsin's natural landscape into dynamic visual expressions, creating a unique artistic legacy as a Wisconsin abstract artist.
+      This site honors his artistic legacy and shares information about the memorial exhibition and art sale, an opportunity for collectors to acquire original works directly from the estate.
+    </p>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- EVENT CARD — revised to a post-show recap.     -->
+  <!-- Fill in the bracketed numbers below once final. -->
+  <!-- ============================================= -->
   <section class="event-card">
-    <h2>Memorial Exhibition & Art Sale</h2>
+    <h2>The Show Was a Great Success</h2>
     <div class="event-details">
       <p>
-        <strong>Opening Reception</strong>
-        Friday, June 5th, 2026 · 5–8pm<br>
-        Sale Continues Saturday, June 6th, 2026 · 12-5pm
+        <strong>Thank You, Milwaukee</strong>
+        On June 5th and 6th, 2026, the Jazz Gallery Center for the Arts opened its doors for a memorial exhibition celebrating the life and six-decade career of Louis Thayer Hills. Family, friends, longtime collectors, and first-time admirers gathered to view his work — and many took a piece of his legacy home with them.
       </p>
-      <p style="margin-top: 20px;">
+    </div>
+    <div class="stats-strip">
+      <div class="stat">
+        <span class="stat-number">[#]</span>
+        <span class="stat-label">Works Found New Homes</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">$[#]</span>
+        <span class="stat-label">Raised</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">[#]</span>
+        <span class="stat-label">Guests Over Two Days</span>
+      </div>
+    </div>
+    <div class="event-details" style="margin-top: 20px;">
+      <p>
         <strong>Jazz Gallery Center for the Arts</strong>
         926 E Center St<br>
         Milwaukee, WI 53212<br>
@@ -774,86 +772,155 @@ This site honors his artistic legacy and shares information about an upcoming me
     </div>
   </section>
 
-  <!-- Image Row -->
+  <!-- ============================================= -->
+  <!-- NEW: VIDEO SECTION                              -->
+  <!-- ============================================= -->
+  <section class="video-section">
+    <h2>Watch: A Life in Art</h2>
+    <p>A short film exploring Louis Thayer Hills' six decades of work, his life in southeastern Wisconsin, and the landscape that shaped his abstract vision.</p>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/lVSseqWk3JU"
+        title="Louis Thayer Hills — A Life in Art"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
   <div class="image-row">
     <img onclick="openLightbox(this.src)" src="images/lth-08.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-09.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-13.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
-  <section>
+  <section class="section-sage">
     <h2>About the Collection</h2>
     <p>
-      The collection encompasses decades of abstract work across a broad range of media, subjects, and scales. 
-      From hundreds of pages of ink and marker in spiral-bound notebooks, to oversize masonite paintings 4' x 5', 
+      The collection encompasses decades of abstract work across a broad range of media, subjects, and scales.
+      From hundreds of pages of ink and marker in spiral-bound notebooks, to oversize masonite paintings 4' x 5',
       to stacks and stacks of etchings/prints on paper, the offerings range from intimate sketch studies to huge statement pieces.
     </p>
   </section>
 
-
-  <!-- Image Row -->
   <div class="image-row">
     <img onclick="openLightbox(this.src)" src="images/lth-11.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-12.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-10.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
-  <section>
-    <h2>Trade & Hospitality Viewing</h2>
-    <p>
-      Due to the scale of the collection, a dedicated viewing period will be offered for 
-      <strong>restaurants, hotels, interior designers, and other commercial buyers</strong> 
-      interested in acquiring multiple works.
+  <!-- ============================================================= -->
+  <!-- NEW: SIZE SERIES GALLERY — replaces "Trade & Hospitality"       -->
+  <!-- TODO: swap in the real size, image filenames, and captions.     -->
+  <!-- Add class="sold" to any .gallery-item div to show the SOLD      -->
+  <!-- ribbon, e.g. <div class="gallery-item sold"> ... </div>          -->
+  <!-- ============================================================= -->
+  <section class="gallery-section size-series-section">
+    <h2>The [SIZE] Series</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      A complete look at every [SIZE] piece from the collection — a consistent format Hills returned to again and again, shown here together as its own body of work.
     </p>
-    <p>
-      This trade preview allows buyers to select cohesive groupings of original artworks and explore 
-      a wide range of sizes and styles well-suited for larger spaces. Works are available directly 
-      from the artist's estate, with pricing structured to support volume acquisitions.
-    </p>
-    <p>
-      Trade preview access is available by appointment on Thursday, June 4th, 2026 from 12pm-6pm
-    </p>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-1.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-1.jpg" alt="Untitled #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #1</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-2.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-2.jpg" alt="Untitled #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #2</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-3.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-3.jpg" alt="Untitled #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #3</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-4.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-4.jpg" alt="Untitled #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #4</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-5.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-5.jpg" alt="Untitled #5">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #5</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/SIZE-SERIES-6.jpg" target="_blank">
+          <img src="images/SIZE-SERIES-6.jpg" alt="Untitled #6">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Untitled #6</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-
-  <!-- Image Row -->
   <div class="image-row">
     <img onclick="openLightbox(this.src)" src="images/lth-05.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-15.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-16.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
-  <section>
+  <section class="section-taupe">
     <h2>Pricing & Acquisition</h2>
     <p>
-      Pricing has been structured to reflect the size and breadth of the collection, with the intention 
+      Pricing has been structured to reflect the size and breadth of the collection, with the intention
       of making original works accessible while respecting the artist's lifetime of production.
-      The goal of this sale is to place the work into active display — in homes, 
-      collections, and public-facing spaces — rather than storage. 
+      The goal of this sale is to place the work into active display — in homes,
+      collections, and public-facing spaces — rather than storage.
     </p>
   </section>
 
-
-  <!-- Image Row -->
   <div class="image-row">
     <img onclick="openLightbox(this.src)" src="images/lth-17.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-04.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-14.jpg" alt="Louis Thayer Hills artwork">
   </div>
 
-  <section>
+  <section class="section-lavender">
     <h2>Inquiries</h2>
     <p>
-      For information regarding the exhibition, estate sale, or trade preview access, please check 
-      back for updates or contact the estate directly at <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
+      Thank you to everyone who joined us for the memorial exhibition. For information regarding remaining
+      available works or estate matters, please contact the estate directly at
+      <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
     </p>
     <p>
-      Further details will be released as the event approaches.
+      Additional pieces and updates will continue to be added here.
     </p>
   </section>
 
-
-  <!-- Image Row -->
   <div class="image-row">
     <img onclick="openLightbox(this.src)" src="images/lth-02.jpg" alt="Louis Thayer Hills artwork">
     <img onclick="openLightbox(this.src)" src="images/lth-07.jpg" alt="Louis Thayer Hills artwork">
@@ -861,141 +928,141 @@ This site honors his artistic legacy and shares information about an upcoming me
   </div>
 
   <div class="divider"></div>
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<section class="gallery-section">
-  <h2>Selected Works</h2>
+  <section class="gallery-section">
+    <h2>Selected Works</h2>
 
-  <div class="gallery">
+    <div class="gallery">
 
-    <div class="gallery-item sold">
-      <a href="images/lth-01.jpg" target="_blank">
-        <img src="images/lth-01.jpg" alt="Self-Portrait Study">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Self-Portrait Study</span>
-        <div class="artwork-details">Oil on canvas · 1957</div>
+      <div class="gallery-item sold">
+        <a href="images/lth-01.jpg" target="_blank">
+          <img src="images/lth-01.jpg" alt="Self-Portrait Study">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Self-Portrait Study</span>
+          <div class="artwork-details">Oil on canvas · 1957</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-02.jpg" target="_blank">
-        <img src="images/lth-02.jpg" alt="Abstract Composition #1">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Abstract Composition #1</span>
-        <div class="artwork-details">Ink/Marker on Paper · 1999</div>
+      <div class="gallery-item">
+        <a href="images/lth-02.jpg" target="_blank">
+          <img src="images/lth-02.jpg" alt="Abstract Composition #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Abstract Composition #1</span>
+          <div class="artwork-details">Ink/Marker on Paper · 1999</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-03.jpg" target="_blank">
-        <img src="images/lth-03.jpg" alt="Etching Series No. 1">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Etching Series No. 1</span>
-        <div class="artwork-details">Ink/Paper · 1979</div>
+      <div class="gallery-item">
+        <a href="images/lth-03.jpg" target="_blank">
+          <img src="images/lth-03.jpg" alt="Etching Series No. 1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching Series No. 1</span>
+          <div class="artwork-details">Ink/Paper · 1979</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-04.jpg" target="_blank">
-        <img src="images/lth-04.jpg" alt="Sculpture Study #3">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Sculpture Study #3</span>
-        <div class="artwork-details">Ink/paper · 1980</div>
+      <div class="gallery-item">
+        <a href="images/lth-04.jpg" target="_blank">
+          <img src="images/lth-04.jpg" alt="Sculpture Study #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sculpture Study #3</span>
+          <div class="artwork-details">Ink/paper · 1980</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-05.jpg" target="_blank">
-        <img src="images/lth-05.jpg" alt="Rio Azul">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Rio Azul</span>
-        <div class="artwork-details">Acrylic · 1987</div>
+      <div class="gallery-item">
+        <a href="images/lth-05.jpg" target="_blank">
+          <img src="images/lth-05.jpg" alt="Rio Azul">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Rio Azul</span>
+          <div class="artwork-details">Acrylic · 1987</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-06.jpg" target="_blank">
-        <img src="images/lth-06.jpg" alt="Abstract Landscape #2">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Abstract Landscape #2</span>
-        <div class="artwork-details">Oil on Canvas, Framed · 1987</div>
+      <div class="gallery-item">
+        <a href="images/lth-06.jpg" target="_blank">
+          <img src="images/lth-06.jpg" alt="Abstract Landscape #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Abstract Landscape #2</span>
+          <div class="artwork-details">Oil on Canvas, Framed · 1987</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-07.jpg" target="_blank">
-        <img src="images/lth-07.jpg" alt="Abstract Acrylic #4">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Abstract Acrylic #4</span>
-        <div class="artwork-details">Acrylic on Masonite · 2009</div>
+      <div class="gallery-item">
+        <a href="images/lth-07.jpg" target="_blank">
+          <img src="images/lth-07.jpg" alt="Abstract Acrylic #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Abstract Acrylic #4</span>
+          <div class="artwork-details">Acrylic on Masonite · 2009</div>
+        </div>
       </div>
-    </div>
 
-   <div class="gallery-item sold">
-      <a href="images/lth-email-painting-1.jpg" target="_blank">
-        <img src="images/lth-email-painting-1.jpg" alt="Blue Abstract #9">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Blue Abstract #9</span>
-        <div class="artwork-details">Acrylic on Wood · 2009</div>
+      <div class="gallery-item sold">
+        <a href="images/lth-email-painting-1.jpg" target="_blank">
+          <img src="images/lth-email-painting-1.jpg" alt="Blue Abstract #9">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Blue Abstract #9</span>
+          <div class="artwork-details">Acrylic on Wood · 2009</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-email-painting-3.jpg" target="_blank">
-        <img src="images/lth-email-painting-3.jpg" alt="Landscape #33">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Landscape #33</span>
-        <div class="artwork-details">Oil on Canvas · 1958</div>
+      <div class="gallery-item">
+        <a href="images/lth-email-painting-3.jpg" target="_blank">
+          <img src="images/lth-email-painting-3.jpg" alt="Landscape #33">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Landscape #33</span>
+          <div class="artwork-details">Oil on Canvas · 1958</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-email-painting-4.jpg" target="_blank">
-        <img src="images/lth-email-painting-4.jpg" alt="Green Print #5A">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Green Print #5A</span>
-        <div class="artwork-details">Etching · 1980</div>
+      <div class="gallery-item">
+        <a href="images/lth-email-painting-4.jpg" target="_blank">
+          <img src="images/lth-email-painting-4.jpg" alt="Green Print #5A">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Green Print #5A</span>
+          <div class="artwork-details">Etching · 1980</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-email-painting-5.jpg" target="_blank">
-        <img src="images/lth-email-painting-5.jpg" alt="Ocean City">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Ocean City</span>
-        <div class="artwork-details">Oil · 1980s</div>
+      <div class="gallery-item">
+        <a href="images/lth-email-painting-5.jpg" target="_blank">
+          <img src="images/lth-email-painting-5.jpg" alt="Ocean City">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Ocean City</span>
+          <div class="artwork-details">Oil · 1980s</div>
+        </div>
       </div>
-    </div>
 
-    <div class="gallery-item">
-      <a href="images/lth-email-painting-2.jpg" target="_blank">
-        <img src="images/lth-email-painting-2.jpg" alt="Blue Abstract #7">
-      </a>
-      <div class="gallery-caption">
-        <span class="artwork-title">Blue Abstract #7</span>
-        <div class="artwork-details">Acrylic · 2013</div>
+      <div class="gallery-item">
+        <a href="images/lth-email-painting-2.jpg" target="_blank">
+          <img src="images/lth-email-painting-2.jpg" alt="Blue Abstract #7">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Blue Abstract #7</span>
+          <div class="artwork-details">Acrylic · 2013</div>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
-    
+    </div>
+  </section>
+
   <div class="divider"></div>
 
   <section class="contact-section">
     <h2>Contact</h2>
-    
+
     <div class="contact-block">
       <strong>Estate of Louis Thayer Hills</strong>
       <p>
@@ -1004,21 +1071,21 @@ This site honors his artistic legacy and shares information about an upcoming me
       </p>
     </div>
 
-   <div class="contact-block">
-<strong>Jazz Gallery Center for the Arts</strong>
-<p>
-  <a href="https://www.google.com/maps/search/?api=1&query=926+E+Center+St+Milwaukee+WI+53212" target="_blank" style="display: inline-block;">
-    📍 926 E Center St<br>
-    &nbsp;&nbsp;&nbsp;Milwaukee, WI 53212
-  </a><br>
- (414) 374-4722<br> 
+    <div class="contact-block">
+      <strong>Jazz Gallery Center for the Arts</strong>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=926+E+Center+St+Milwaukee+WI+53212" target="_blank" style="display: inline-block;">
+          📍 926 E Center St<br>
+          &nbsp;&nbsp;&nbsp;Milwaukee, WI 53212
+        </a><br>
+        (414) 374-4722<br>
         <a href="mailto:info@jazzgallerycenterforarts.org">info@jazzgallerycenterforarts.org</a><br>
         <a href="https://jazzgallerycenterforarts.org" target="_blank">jazzgallerycenterforarts.org</a>
       </p>
     </div>
-    </section>   <!-- ← ADD THIS LINE (closes contact section) -->
-  
- </div>
+  </section>
+
+</div>
 
 <script>
 function openLightbox(src) {
@@ -1076,6 +1143,3 @@ function closeLightbox() {
 </script>
 </body>
 </html>
-</body>
-</html>
-
