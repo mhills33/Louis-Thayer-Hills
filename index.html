@@ -20,30 +20,20 @@
       --shadow-subtle: 0 2px 12px rgba(42, 40, 38, 0.08);
       --shadow-medium: 0 8px 32px rgba(42, 40, 38, 0.12);
 
-      /* Muted palette colors */
       --sage-green: #b5c4a8;
       --dusty-blue: #a4b5c4;
       --warm-taupe: #c4b5a8;
       --soft-lavender: #b8afc4;
       --muted-coral: #d4a59a;
 
-      /* Text colors for better readability */
       --text-dark: #2a2826;
       --text-medium: #3d3a38;
 
-      /* Sold ribbon */
       --sold-red: #a81c1c;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: linear-gradient(135deg, #e8dfd1 0%, var(--cream) 100%);
@@ -58,10 +48,8 @@
     body::before {
       content: '';
       position: fixed;
-      top: -50%;
-      right: -20%;
-      width: 80%;
-      height: 80%;
+      top: -50%; right: -20%;
+      width: 80%; height: 80%;
       background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
       pointer-events: none;
       animation: float 20s ease-in-out infinite;
@@ -77,14 +65,11 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      margin-left: auto;
-      margin-right: auto;
       padding: 60px 40px 80px;
       position: relative;
       z-index: 1;
     }
 
-    /* Hero section */
     .hero {
       background: var(--warm-white);
       border: 1px solid var(--border-light);
@@ -100,9 +85,7 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--accent-gold), var(--accent-rust));
     }
@@ -143,7 +126,6 @@
       font-weight: 400;
     }
 
-    /* Carousel */
     .hero-carousel {
       position: relative;
       max-width: 650px;
@@ -154,59 +136,34 @@
       box-shadow: var(--shadow-subtle);
     }
 
-    .carousel-inner {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66.67%;
-    }
+    .carousel-inner { position: relative; width: 100%; padding-bottom: 66.67%; }
 
     .carousel-slide {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
 
     .carousel-slide.active { opacity: 1; z-index: 1; }
+    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
+    .carousel-indicators { display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
 
     .carousel-indicator {
-      width: 10px;
-      height: 10px;
+      width: 10px; height: 10px;
       border-radius: 50%;
       background: var(--soft-brown);
       opacity: 0.3;
       cursor: pointer;
       transition: all 0.3s ease;
-      border: none;
-      padding: 0;
+      border: none; padding: 0;
     }
 
-    .carousel-indicator.active {
-      opacity: 1;
-      background: var(--accent-gold);
-      transform: scale(1.2);
-    }
-
+    .carousel-indicator.active { opacity: 1; background: var(--accent-gold); transform: scale(1.2); }
     .carousel-indicator:hover { opacity: 0.6; }
 
-    /* Section styling - DEFAULT */
     section {
       background: var(--warm-white);
       border: 1px solid var(--border-light);
@@ -218,16 +175,7 @@
       animation: fadeInUp 0.8s ease-out backwards;
     }
 
-    section:nth-of-type(2) { animation-delay: 0.1s; }
-    section:nth-of-type(3) { animation-delay: 0.2s; }
-    section:nth-of-type(4) { animation-delay: 0.3s; }
-    section:nth-of-type(5) { animation-delay: 0.4s; }
-    section:nth-of-type(6) { animation-delay: 0.5s; }
-
-    section:hover {
-      box-shadow: var(--shadow-medium);
-      transform: translateY(-2px);
-    }
+    section:hover { box-shadow: var(--shadow-medium); transform: translateY(-2px); }
 
     h2 {
       font-family: "Cormorant Garamond", Georgia, serif;
@@ -243,19 +191,12 @@
     h2::after {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 60px;
-      height: 2px;
+      bottom: -2px; left: 0;
+      width: 60px; height: 2px;
       background: var(--accent-rust);
     }
 
-    section p {
-      margin-bottom: 18px;
-      color: var(--text-medium);
-      font-weight: 400;
-    }
-
+    section p { margin-bottom: 18px; color: var(--text-medium); font-weight: 400; }
     section p:last-child { margin-bottom: 0; }
 
     /* Event card */
@@ -264,28 +205,12 @@
       color: var(--warm-white);
       border: none;
       padding: 50px 45px;
-      animation-delay: 0s;
     }
 
-    .event-card h2 {
-      color: var(--warm-white);
-      border-bottom-color: rgba(255, 255, 255, 0.3);
-    }
-
+    .event-card h2 { color: var(--warm-white); border-bottom-color: rgba(255, 255, 255, 0.3); }
     .event-card h2::after { background: var(--warm-white); }
-
-    .event-card p {
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 400;
-    }
-
-    .event-card strong {
-      color: var(--warm-white);
-      font-weight: 500;
-      font-size: 1.1em;
-      display: block;
-      margin-bottom: 8px;
-    }
+    .event-card p { color: rgba(255, 255, 255, 0.95); font-weight: 400; }
+    .event-card strong { color: var(--warm-white); font-weight: 500; font-size: 1.1em; display: block; margin-bottom: 8px; }
 
     .event-details {
       background: rgba(0, 0, 0, 0.15);
@@ -295,41 +220,8 @@
       border-left: 3px solid var(--accent-gold);
     }
 
-    /* Stats strip — recap numbers on the event card */
-    .stats-strip {
-      display: flex;
-      gap: 18px;
-      margin-top: 25px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      flex: 1;
-      min-width: 140px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.12);
-      border-left: 3px solid var(--accent-gold);
-      padding: 18px 10px;
-      border-radius: 2px;
-    }
-
-    .stat-number {
-      display: block;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 2.2rem;
-      color: var(--warm-white);
-      font-weight: 600;
-      line-height: 1.1;
-    }
-
-    .stat-label {
-      display: block;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.85);
-      margin-top: 6px;
-    }
+    .event-card a { color: var(--warm-white); border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
+    .event-card a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 
     /* Video section */
     .video-section p { max-width: 650px; }
@@ -337,43 +229,51 @@
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       margin-top: 10px;
       box-shadow: var(--shadow-medium);
       background: var(--charcoal);
     }
 
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* Color-coded section variants (class based, not position based) */
+    /* Color-coded section variants */
     .section-sage { background: var(--sage-green); }
     .section-sage h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
     .section-sage h2::after { background: var(--text-dark); }
     .section-sage p { color: var(--text-dark); }
+    .section-sage a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    .section-sage a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
 
     .section-taupe { background: var(--warm-taupe); }
     .section-taupe h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
     .section-taupe h2::after { background: var(--text-dark); }
     .section-taupe p { color: var(--text-dark); }
-
-    .section-lavender { background: var(--soft-lavender); }
-    .section-lavender h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
-    .section-lavender h2::after { background: var(--text-dark); }
-    .section-lavender p { color: var(--text-dark); }
+    .section-taupe a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    .section-taupe a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
 
     section.size-series-section { background: var(--dusty-blue); }
     section.size-series-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
     section.size-series-section h2::after { background: var(--text-dark); }
     section.size-series-section p { color: var(--text-dark); }
+    section.size-series-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    section.size-series-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
 
-    /* Links */
+    section.etchings-section { background: var(--warm-taupe); }
+    section.etchings-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    section.etchings-section h2::after { background: var(--text-dark); }
+    section.etchings-section p { color: var(--text-dark); }
+    section.etchings-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    section.etchings-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
+
+    section.smaller-section { background: var(--soft-lavender); }
+    section.smaller-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    section.smaller-section h2::after { background: var(--text-dark); }
+    section.smaller-section p { color: var(--text-dark); }
+    section.smaller-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    section.smaller-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
+
+    /* Links (default) */
     a {
       color: var(--accent-rust);
       text-decoration: none;
@@ -381,71 +281,21 @@
       transition: all 0.3s ease;
       font-weight: 400;
     }
+    a:hover { border-bottom-color: var(--accent-rust); color: var(--charcoal); }
 
-    a:hover {
-      border-bottom-color: var(--accent-rust);
-      color: var(--charcoal);
-    }
-
-    .event-card a {
-      color: var(--warm-white);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    }
-
-    .event-card a:hover {
-      color: var(--accent-gold);
-      border-bottom-color: var(--accent-gold);
-    }
-
-    .section-sage a,
-    .section-taupe a,
-    .section-lavender a,
-    section.size-series-section a {
-      color: var(--text-dark);
-      border-bottom: 1px solid rgba(42, 40, 38, 0.3);
-    }
-
-    .section-sage a:hover,
-    .section-taupe a:hover,
-    .section-lavender a:hover,
-    section.size-series-section a:hover {
-      border-bottom-color: var(--text-dark);
-      opacity: 0.8;
-    }
-
-    /* Gallery section (Selected Works + Size Series share this) */
-    .gallery-section {
-      text-align: center;
-      padding: 50px 45px;
-      background: var(--muted-coral);
-    }
-
-    .gallery-section h2 {
-      color: var(--text-dark);
-      border-bottom-color: rgba(42, 40, 38, 0.25);
-    }
-
+    /* Gallery section (shared by all 4 art galleries) */
+    .gallery-section { text-align: center; padding: 50px 45px; background: var(--muted-coral); }
+    .gallery-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
     .gallery-section h2::after { background: var(--text-dark); }
+    .gallery-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    .gallery-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
-      margin-top: 40px;
-      align-items: start;
-    }
-
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; margin-top: 40px; align-items: start; }
     .gallery-item { position: relative; }
-
-    .gallery-item a {
-      position: relative;
-      display: block;
-      overflow: hidden;
-    }
+    .gallery-item a { position: relative; display: block; overflow: hidden; cursor: pointer; }
 
     .gallery img {
-      width: 100%;
-      height: auto;
+      width: 100%; height: auto;
       object-fit: contain;
       border: none;
       box-shadow: var(--shadow-medium);
@@ -454,16 +304,9 @@
       display: block;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05) translateY(-5px);
-      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.3);
-    }
+    .gallery img:hover { transform: scale(1.05) translateY(-5px); box-shadow: 0 12px 48px rgba(42, 40, 38, 0.3); }
 
-    .gallery-caption {
-      margin-top: 18px;
-      text-align: center;
-      line-height: 1.5;
-    }
+    .gallery-caption { margin-top: 18px; text-align: center; line-height: 1.5; }
 
     .artwork-title {
       font-family: "Cormorant Garamond", Georgia, serif;
@@ -475,20 +318,11 @@
       margin-bottom: 8px;
     }
 
-    .artwork-details {
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      font-weight: 500;
-    }
+    .artwork-details { font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
 
-    /* Collapsible "See More" gallery extension (used by the 32x48 series) */
-    .gallery.gallery-extra {
-      display: none;
-    }
-
-    .gallery.gallery-extra.expanded {
-      display: grid;
-    }
+    /* Collapsible "See More" gallery extension */
+    .gallery.gallery-extra { display: none; }
+    .gallery.gallery-extra.expanded { display: grid; }
 
     .see-more-btn {
       display: inline-block;
@@ -505,14 +339,9 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+    .see-more-btn:hover { background: var(--accent-rust); }
 
-    .see-more-btn:hover {
-      background: var(--accent-rust);
-    }
-
-    /* SOLD ribbon — shared look, two contexts:
-       - small gallery thumbnails: add class="sold" to the .gallery-item div
-       - full-size carousel slides: add class="sold" to the .carousel-slide div */
+    /* SOLD ribbon */
     .gallery-item.sold a::after,
     .carousel-slide.sold::after {
       content: 'SOLD';
@@ -528,131 +357,58 @@
       pointer-events: none;
     }
 
-    .gallery-item.sold a::after {
-      top: 18px;
-      left: -38px;
-      width: 160px;
-      font-size: 0.95rem;
-      padding: 6px 0;
-      transform: rotate(-38deg);
-    }
-
-    .carousel-slide.sold::after {
-      top: 28px;
-      left: -55px;
-      width: 230px;
-      font-size: 1.3rem;
-      padding: 10px 0;
-      transform: rotate(-38deg);
-    }
+    .gallery-item.sold a::after { top: 18px; left: -38px; width: 160px; font-size: 0.95rem; padding: 6px 0; transform: rotate(-38deg); }
+    .carousel-slide.sold::after { top: 28px; left: -55px; width: 230px; font-size: 1.3rem; padding: 10px 0; transform: rotate(-38deg); }
 
     @media (max-width: 768px) {
-      .carousel-slide.sold::after {
-        top: 18px;
-        left: -45px;
-        width: 180px;
-        font-size: 1rem;
-        padding: 7px 0;
-      }
+      .carousel-slide.sold::after { top: 18px; left: -45px; width: 180px; font-size: 1rem; padding: 7px 0; }
     }
 
-    /* Image row between sections */
-    .image-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin: 40px 0;
-    }
-
-    .image-row img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      box-shadow: var(--shadow-medium);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: block;
-    }
-
-    .image-row img:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 48px rgba(42, 40, 38, 0.25);
-    }
-
-    /* Contact section */
-    .contact-section {
-      background: var(--warm-white);
-      border: 2px dashed var(--border-light);
-    }
-
-    .contact-section h2 { color: var(--text-dark); }
-
-    .contact-section p {
-      color: var(--text-medium);
-      font-weight: 400;
-    }
-
-    .contact-block { margin-bottom: 30px; }
-    .contact-block:last-child { margin-bottom: 0; }
-
-    .contact-block strong {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 1.3rem;
-      color: var(--text-dark);
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
+    /* Sidebar (availability + pricing) floats top-left on large screens */
     @media (min-width: 1200px) {
-      .contact-section {
+      .sidebar-left {
         position: fixed;
         left: 20px;
         top: 100px;
-        max-width: 280px;
         width: 280px;
-        padding: 30px 20px;
+        max-width: 280px;
         z-index: 100;
-        overflow: hidden;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
       }
-      .contact-section * { word-wrap: break-word; overflow-wrap: break-word; }
-      .contact-section a { font-size: 0.9rem; }
+      .sidebar-left section {
+        padding: 24px 20px;
+        margin-bottom: 16px;
+      }
+      .sidebar-left section:last-child { margin-bottom: 0; }
+      .sidebar-left * { word-wrap: break-word; overflow-wrap: break-word; }
+      .sidebar-left a { font-size: 0.9rem; }
     }
 
-    /* Video floats on the right, but only once the viewport is wide enough
-       that it won't crowd the centered 900px column (needs more room than
-       the 1200px breakpoint used for the contact box, since both float at once). */
-    @media (min-width: 1400px) {
+    .availability-box { background: var(--warm-white); border: 2px dashed var(--border-light); }
+    .availability-box h2 { color: var(--text-dark); }
+    .availability-box p { color: var(--text-medium); font-weight: 400; }
+    .availability-box strong { color: var(--sold-red); }
+
+    /* Video floats top-right on very large screens (enlarged 50%) */
+    @media (min-width: 1900px) {
       .video-section {
         position: fixed;
         right: 20px;
         top: 100px;
-        max-width: 300px;
-        width: 300px;
-        padding: 22px 20px;
+        max-width: 450px;
+        width: 450px;
+        padding: 30px 28px;
         z-index: 100;
         overflow: hidden;
         max-height: calc(100vh - 120px);
         overflow-y: auto;
       }
-      .video-section h2 {
-        font-size: 1.25rem;
-        margin-bottom: 12px;
-        padding-bottom: 8px;
-      }
-      .video-section p {
-        font-size: 0.85rem;
-        margin-bottom: 12px;
-        max-width: none;
-      }
+      .video-section h2 { font-size: 1.7rem; margin-bottom: 16px; padding-bottom: 10px; }
+      .video-section p { font-size: 1.05rem; margin-bottom: 16px; max-width: none; }
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-light), transparent);
-      margin: 50px 0;
-      border: none;
-    }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-light), transparent); margin: 50px 0; border: none; }
 
     @media (max-width: 768px) {
       .container { padding: 40px 25px 60px; }
@@ -661,36 +417,25 @@
       h1 { font-size: 2.6rem; }
       section { padding: 30px 25px; }
       .event-card { padding: 35px 25px; }
-      .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; }
-      .stats-strip { gap: 12px; }
     }
 
     body::after {
       content: '';
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: repeating-linear-gradient(
-        0deg,
-        rgba(42, 40, 38, 0.03) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(42, 40, 38, 0.03) 3px
-      );
+      background-image: repeating-linear-gradient(0deg, rgba(42, 40, 38, 0.03) 0px, transparent 1px, transparent 2px, rgba(42, 40, 38, 0.03) 3px);
       pointer-events: none;
       opacity: 0.3;
       z-index: 0;
     }
 
+    /* Mobile: make gallery images as large as possible — single column, minimal side padding */
     @media (max-width: 768px) {
-      .gallery { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .gallery img { height: auto; }
-      .artwork-title { font-size: 1.2rem; }
-      .artwork-details { font-size: 0.95rem; }
-    }
-
-    @media (max-width: 768px) {
-      .image-row { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-      .image-row img { height: auto; }
+      .gallery-section { padding: 35px 12px; }
+      .gallery { grid-template-columns: 1fr; gap: 40px; }
+      .gallery img { height: auto; width: 100%; }
+      .artwork-title { font-size: 1.3rem; }
+      .artwork-details { font-size: 1rem; }
     }
 
     .lightbox {
@@ -703,16 +448,33 @@
     }
 
     .lightbox.active { display: flex; align-items: center; justify-content: center; }
-
     .lightbox-content { max-width: 95vw; max-height: 95vh; object-fit: contain; }
 
-    .lightbox-close {
+    .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 50px; cursor: pointer; z-index: 10001; }
+
+    .lightbox-arrow {
       position: absolute;
-      top: 30px;
-      right: 40px;
-      color: white;
-      font-size: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      padding: 16px 20px;
       cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+      z-index: 10000;
+      user-select: none;
+    }
+    .lightbox-arrow:hover { background: rgba(255, 255, 255, 0.3); }
+    .lightbox-arrow-left { left: 20px; }
+    .lightbox-arrow-right { right: 20px; }
+
+    @media (max-width: 768px) {
+      .lightbox-arrow { font-size: 1.4rem; padding: 12px 14px; }
+      .lightbox-arrow-left { left: 8px; }
+      .lightbox-arrow-right { right: 8px; }
     }
   </style>
 </head>
@@ -720,7 +482,9 @@
 <body>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="lightbox-close">&times;</span>
+  <button class="lightbox-arrow lightbox-arrow-left" onclick="prevGalleryImage(event)">&#10094;</button>
   <img class="lightbox-content" id="lightbox-img">
+  <button class="lightbox-arrow lightbox-arrow-right" onclick="nextGalleryImage(event)">&#10095;</button>
 </div>
 
 <div class="container">
@@ -741,6 +505,8 @@
         <div class="carousel-slide sold"><img src="images/sold-june-2026-3.jpg" alt="Louis Hills artwork 8"></div>
         <div class="carousel-slide sold"><img src="images/acrylic on stretched canvas 1980s 24 x 36.jpg" alt="Louis Hills artwork 9"></div>
         <div class="carousel-slide"><img src="images/Elegant_night_at_a_fine_restaurant.png" alt="Louis Hills artwork 10"></div>
+        <div class="carousel-slide sold"><img src="images/lth-01.jpg" alt="Louis Hills artwork 11"></div>
+        <div class="carousel-slide sold"><img src="images/lth-email-painting-1.jpg" alt="Louis Hills artwork 12"></div>
       </div>
       <div class="carousel-indicators">
         <button class="carousel-indicator active" data-slide="0"></button>
@@ -753,6 +519,8 @@
         <button class="carousel-indicator" data-slide="7"></button>
         <button class="carousel-indicator" data-slide="8"></button>
         <button class="carousel-indicator" data-slide="9"></button>
+        <button class="carousel-indicator" data-slide="10"></button>
+        <button class="carousel-indicator" data-slide="11"></button>
       </div>
     </div>
 
@@ -762,46 +530,38 @@
     </p>
   </div>
 
-  <!-- ============================================= -->
-  <!-- EVENT CARD — revised to a post-show recap.     -->
-  <!-- Fill in the bracketed numbers below once final. -->
-  <!-- ============================================= -->
   <section class="event-card">
     <h2>The Show Was a Great Success</h2>
     <div class="event-details">
       <p>
-        <strong>Thank You, Milwaukee!</strong>
-        On June 5th and 6th, 2026, the Jazz Gallery Center for the Arts in RiverWest opened its doors for a memorial exhibition celebrating the life and six-decade career of Louis Thayer Hills. Family, friends, longtime collectors, and first-time admirers gathered to view his work — and many were thrilled to be able to take a piece of his legacy home!
-      </p>
-    </div>
-    <div class="stats-strip">
-      <div class="stat">
-        <span class="stat-number">[170]</span>
-        <span class="stat-label">Works Found New Homes</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">$[3500]</span>
-        <span class="stat-label">Raised</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">[Many]</span>
-        <span class="stat-label">Guests Over Three Days</span>
-      </div>
-    </div>
-    <div class="event-details" style="margin-top: 20px;">
-      <p>
-        <strong>Jazz Gallery Center for the Arts</strong>
-        926 E Center St<br>
-        Milwaukee, WI 53212<br>
-        (414) 374-4722<br>
-        <a href="mailto:info@jazzgallerycenterforarts.org">info@jazzgallerycenterforarts.org</a>
+        <strong>Thank You, Milwaukee</strong>
+        On June 5th and 6th, 2026, <a href="https://jazzgallerycenterforarts.org/" target="_blank">Jazz Gallery Center for the Arts</a> opened its doors for a memorial exhibition celebrating the life and six-decade career of Louis Thayer Hills. Family, friends, longtime collectors, and first-time admirers gathered to view his work — and many took a piece of his legacy home with them.
       </p>
     </div>
   </section>
 
-  <!-- ============================================= -->
-  <!-- NEW: VIDEO SECTION                              -->
-  <!-- ============================================= -->
+  <!-- ============================================================= -->
+  <!-- SIDEBAR: floats top-left on large screens (>=1200px); on        -->
+  <!-- smaller screens it just flows inline here in the page.          -->
+  <!-- ============================================================= -->
+  <div class="sidebar-left">
+    <section class="availability-box">
+      <h2>Missed the Show?</h2>
+      <p>All works shown here — except those marked <strong>SOLD</strong> — remain available through the Hills Estate. Reach out below to arrange a viewing or make a purchase.</p>
+      <p><a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a></p>
+    </section>
+
+    <section class="section-taupe">
+      <h2>Pricing & Acquisition</h2>
+      <p>
+        Pricing has been structured to reflect the size and breadth of the collection, with the intention
+        of making original works accessible while respecting the artist's lifetime of production.
+        The goal of this sale is to place the work into active display — in homes,
+        collections, and public-facing spaces — rather than storage.
+      </p>
+    </section>
+  </div>
+
   <section class="video-section">
     <h2>Watch: A Life in Art</h2>
     <p>A short film exploring Louis Thayer Hills' six decades of work and the singular imagination behind his abstract vision.</p>
@@ -816,34 +576,16 @@
     </div>
   </section>
 
-  <div class="image-row">
-    <img onclick="openLightbox(this.src)" src="images/lth-08.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-09.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-13.jpg" alt="Louis Thayer Hills artwork">
-  </div>
-
   <section class="section-sage">
     <h2>About the Collection</h2>
     <p>
-      The collection encompasses decades of abstract work across a broad range of media, styles, and scales.
-      From hundreds of pages of ink and marker in spiral-bound notebooks, to oversize wood fiberboard paintings of 4' x 5',
+      The collection encompasses decades of abstract work across a broad range of media, subjects, and scales.
+      From hundreds of pages of ink and marker in spiral-bound notebooks, to oversize masonite paintings 4' x 5',
       to stacks and stacks of etchings/prints on paper, the offerings range from intimate sketch studies to huge statement pieces.
     </p>
   </section>
 
-  <div class="image-row">
-    <img onclick="openLightbox(this.src)" src="images/lth-11.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-12.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-10.jpg" alt="Louis Thayer Hills artwork">
-  </div>
-
-  <!-- ============================================================= -->
-  <!-- NEW: SIZE SERIES GALLERY — replaces "Trade & Hospitality"       -->
-  <!-- TODO: swap in the real size, image filenames, and captions.     -->
-  <!-- Add class="sold" to any .gallery-item div to show the SOLD      -->
-  <!-- ribbon, e.g. <div class="gallery-item sold"> ... </div>          -->
-  <!-- ============================================================= -->
-  <section class="gallery-section size-series-section">
+  <section class="gallery-section size-series-section" data-gallery="size32x48">
     <h2>The 32" X 48" Abstracts — Acrylic on Masonite Series</h2>
     <p style="max-width: 650px; margin: 0 auto 10px;">
       A comprehensive catalog of 2011–2013 works — all the same (unframed) size.
@@ -852,7 +594,7 @@
     <div class="gallery">
 
       <div class="gallery-item">
-        <a href="images/Image_5_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_5_32_x_48.jpg" alt="Acrylic Abstract #1">
         </a>
         <div class="gallery-caption">
@@ -862,7 +604,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_6_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_6_32_x_48.jpg" alt="Acrylic Abstract #2">
         </a>
         <div class="gallery-caption">
@@ -872,7 +614,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_7_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_7_32_x_48.jpg" alt="Acrylic Abstract #3">
         </a>
         <div class="gallery-caption">
@@ -882,7 +624,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_8_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_8_32_x_48.jpg" alt="Acrylic Abstract #4">
         </a>
         <div class="gallery-caption">
@@ -892,7 +634,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_9_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_9_32_x_48.jpg" alt="Acrylic Abstract #5">
         </a>
         <div class="gallery-caption">
@@ -902,7 +644,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_10_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_10_32_x_48.jpg" alt="Acrylic Abstract #6">
         </a>
         <div class="gallery-caption">
@@ -912,7 +654,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_11_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_11_32_x_48.jpg" alt="Acrylic Abstract #7">
         </a>
         <div class="gallery-caption">
@@ -922,7 +664,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_12_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_12_32_x_48.jpg" alt="Acrylic Abstract #8">
         </a>
         <div class="gallery-caption">
@@ -932,7 +674,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_13_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_13_32_x_48.jpg" alt="Acrylic Abstract #9">
         </a>
         <div class="gallery-caption">
@@ -943,10 +685,10 @@
 
     </div>
 
-<div class="gallery gallery-extra" id="size-series-extra">
+    <div class="gallery gallery-extra" id="size-series-extra">
 
       <div class="gallery-item">
-        <a href="images/Image_14_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_14_32_x_48.jpg" alt="Acrylic Abstract #10">
         </a>
         <div class="gallery-caption">
@@ -956,7 +698,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_15_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_15_32_x_48.jpg" alt="Acrylic Abstract #11">
         </a>
         <div class="gallery-caption">
@@ -966,7 +708,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_16_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_16_32_x_48.jpg" alt="Acrylic Abstract #12">
         </a>
         <div class="gallery-caption">
@@ -976,7 +718,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_17_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_17_32_x_48.jpg" alt="Acrylic Abstract #13">
         </a>
         <div class="gallery-caption">
@@ -986,7 +728,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_18_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_18_32_x_48.jpg" alt="Acrylic Abstract #14">
         </a>
         <div class="gallery-caption">
@@ -996,7 +738,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_19_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_19_32_x_48.jpg" alt="Acrylic Abstract #15">
         </a>
         <div class="gallery-caption">
@@ -1006,7 +748,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_20_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_20_32_x_48.jpg" alt="Acrylic Abstract #16">
         </a>
         <div class="gallery-caption">
@@ -1016,7 +758,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_21_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_21_32_x_48.jpg" alt="Acrylic Abstract #17">
         </a>
         <div class="gallery-caption">
@@ -1026,7 +768,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_22_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_22_32_x_48.jpg" alt="Acrylic Abstract #18">
         </a>
         <div class="gallery-caption">
@@ -1036,7 +778,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_23_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_23_32_x_48.jpg" alt="Acrylic Abstract #19">
         </a>
         <div class="gallery-caption">
@@ -1046,7 +788,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_24_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_24_32_x_48.jpg" alt="Acrylic Abstract #20">
         </a>
         <div class="gallery-caption">
@@ -1056,7 +798,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_25_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_25_32_x_48.jpg" alt="Acrylic Abstract #21">
         </a>
         <div class="gallery-caption">
@@ -1066,7 +808,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_26_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_26_32_x_48.jpg" alt="Acrylic Abstract #22">
         </a>
         <div class="gallery-caption">
@@ -1076,7 +818,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_27_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_27_32_x_48.jpg" alt="Acrylic Abstract #23">
         </a>
         <div class="gallery-caption">
@@ -1086,7 +828,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_28_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_28_32_x_48.jpg" alt="Acrylic Abstract #24">
         </a>
         <div class="gallery-caption">
@@ -1096,7 +838,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_29_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_29_32_x_48.jpg" alt="Acrylic Abstract #25">
         </a>
         <div class="gallery-caption">
@@ -1106,7 +848,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_30_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_30_32_x_48.jpg" alt="Acrylic Abstract #26">
         </a>
         <div class="gallery-caption">
@@ -1116,7 +858,7 @@
       </div>
 
       <div class="gallery-item">
-        <a href="images/Image_31_32_x_48.jpg" target="_blank">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_31_32_x_48.jpg" alt="Acrylic Abstract #27">
         </a>
         <div class="gallery-caption">
@@ -1127,220 +869,473 @@
 
     </div>
 
-    <button class="see-more-btn" id="size-series-toggle" onclick="toggleSizeSeries()">See More</button>
+    <button class="see-more-btn" onclick="toggleGallery('size-series-extra', this)">See More</button>
   </section>
 
-  <div class="image-row">
-    <img onclick="openLightbox(this.src)" src="images/lth-05.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-15.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-16.jpg" alt="Louis Thayer Hills artwork">
-  </div>
-
-  <section class="section-taupe">
-    <h2>Pricing & Acquisition</h2>
-    <p>
-      Pricing has been structured to reflect the size and breadth of the collection, with the intention
-      of making original works accessible while respecting the artist's lifetime of production.
-      The goal of this sale is to place the work into active display — in homes,
-      collections, and public-facing spaces — rather than storage.
+  <section class="gallery-section etchings-section" data-gallery="etchings">
+    <h2>Etchings & Prints</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      A selection of Hills' work on paper, including etchings and hand-pulled prints spanning multiple decades.
     </p>
-  </section>
-
-  <div class="image-row">
-    <img onclick="openLightbox(this.src)" src="images/lth-17.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-04.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-14.jpg" alt="Louis Thayer Hills artwork">
-  </div>
-
-  <section class="section-lavender">
-    <h2>Inquiries</h2>
-    <p>
-      Thank you to everyone who joined us for the memorial exhibition. For information regarding remaining
-      available works or estate matters, please contact the estate directly at
-      <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
-    </p>
-    <p>
-      Additional pieces and updates will continue to be added here.
-    </p>
-  </section>
-
-  <div class="image-row">
-    <img onclick="openLightbox(this.src)" src="images/lth-02.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-07.jpg" alt="Louis Thayer Hills artwork">
-    <img onclick="openLightbox(this.src)" src="images/lth-01.jpg" alt="Louis Thayer Hills artwork">
-  </div>
-
-  <div class="divider"></div>
-  <div class="divider"></div>
-
-  <section class="gallery-section">
-    <h2>Selected Works</h2>
 
     <div class="gallery">
 
-      <div class="gallery-item sold">
-        <a href="images/lth-01.jpg" target="_blank">
-          <img src="images/lth-01.jpg" alt="Self-Portrait Study">
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-1.jpg" alt="Etching #1">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Self-Portrait Study</span>
-          <div class="artwork-details">Oil on canvas · 1957</div>
+          <span class="artwork-title">Etching #1</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/lth-02.jpg" target="_blank">
-          <img src="images/lth-02.jpg" alt="Abstract Composition #1">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-2.jpg" alt="Etching #2">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Abstract Composition #1</span>
-          <div class="artwork-details">Ink/Marker on Paper · 1999</div>
+          <span class="artwork-title">Etching #2</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/lth-03.jpg" target="_blank">
-          <img src="images/lth-03.jpg" alt="Etching Series No. 1">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-3.jpg" alt="Etching #3">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Etching Series No. 1</span>
-          <div class="artwork-details">Ink/Paper · 1979</div>
+          <span class="artwork-title">Etching #3</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/lth-04.jpg" target="_blank">
-          <img src="images/lth-04.jpg" alt="Sculpture Study #3">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-4.jpg" alt="Etching #4">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Sculpture Study #3</span>
-          <div class="artwork-details">Ink/paper · 1980</div>
+          <span class="artwork-title">Etching #4</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/lth-05.jpg" target="_blank">
-          <img src="images/lth-05.jpg" alt="Rio Azul">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-5.jpg" alt="Etching #5">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Rio Azul</span>
-          <div class="artwork-details">Acrylic · 1987</div>
+          <span class="artwork-title">Etching #5</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/lth-06.jpg" target="_blank">
-          <img src="images/lth-06.jpg" alt="Abstract Landscape #2">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-6.jpg" alt="Etching #6">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Abstract Landscape #2</span>
-          <div class="artwork-details">Oil on Canvas, Framed · 1987</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/lth-07.jpg" target="_blank">
-          <img src="images/lth-07.jpg" alt="Abstract Acrylic #4">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Abstract Acrylic #4</span>
-          <div class="artwork-details">Acrylic on Masonite · 2009</div>
-        </div>
-      </div>
-
-      <div class="gallery-item sold">
-        <a href="images/lth-email-painting-1.jpg" target="_blank">
-          <img src="images/lth-email-painting-1.jpg" alt="Blue Abstract #9">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Blue Abstract #9</span>
-          <div class="artwork-details">Acrylic on Wood · 2009</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/lth-email-painting-3.jpg" target="_blank">
-          <img src="images/lth-email-painting-3.jpg" alt="Landscape #33">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Landscape #33</span>
-          <div class="artwork-details">Oil on Canvas · 1958</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/lth-email-painting-4.jpg" target="_blank">
-          <img src="images/lth-email-painting-4.jpg" alt="Green Print #5A">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Green Print #5A</span>
-          <div class="artwork-details">Etching · 1980</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/lth-email-painting-5.jpg" target="_blank">
-          <img src="images/lth-email-painting-5.jpg" alt="Ocean City">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Ocean City</span>
-          <div class="artwork-details">Oil · 1980s</div>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/lth-email-painting-2.jpg" target="_blank">
-          <img src="images/lth-email-painting-2.jpg" alt="Blue Abstract #7">
-        </a>
-        <div class="gallery-caption">
-          <span class="artwork-title">Blue Abstract #7</span>
-          <div class="artwork-details">Acrylic · 2013</div>
+          <span class="artwork-title">Etching #6</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
         </div>
       </div>
 
     </div>
+
+    <div class="gallery gallery-extra" id="etchings-extra">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-7.jpg" alt="Etching #7">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #7</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-8.jpg" alt="Etching #8">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #8</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-9.jpg" alt="Etching #9">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #9</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-10.jpg" alt="Etching #10">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #10</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-11.jpg" alt="Etching #11">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #11</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-etching-12.jpg" alt="Etching #12">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Etching #12</span>
+          <div class="artwork-details">Ink on Paper · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="see-more-btn" onclick="toggleGallery('etchings-extra', this)">See More</button>
   </section>
+
+  <section class="gallery-section smaller-section" data-gallery="smaller">
+    <h2>Smaller Sizes</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      Compact studies and smaller-format paintings — easier to display, just as striking.
+    </p>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-1.jpg" alt="Smaller Work #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #1</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-2.jpg" alt="Smaller Work #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #2</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-3.jpg" alt="Smaller Work #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #3</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-4.jpg" alt="Smaller Work #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #4</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-5.jpg" alt="Smaller Work #5">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #5</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-6.jpg" alt="Smaller Work #6">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #6</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery gallery-extra" id="smaller-extra">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-7.jpg" alt="Smaller Work #7">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #7</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-8.jpg" alt="Smaller Work #8">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #8</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-9.jpg" alt="Smaller Work #9">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #9</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-10.jpg" alt="Smaller Work #10">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #10</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-11.jpg" alt="Smaller Work #11">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #11</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-smaller-12.jpg" alt="Smaller Work #12">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Smaller Work #12</span>
+          <div class="artwork-details">[Medium] · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="see-more-btn" onclick="toggleGallery('smaller-extra', this)">See More</button>
+  </section>
+
+  <section class="gallery-section " data-gallery="sketchbooks">
+    <h2>Sketchbooks</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      Pages pulled from Hills' spiral-bound notebooks, filled with ink and marker studies from across his career.
+    </p>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-1.jpg" alt="Sketchbook Page #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #1</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-2.jpg" alt="Sketchbook Page #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #2</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-3.jpg" alt="Sketchbook Page #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #3</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-4.jpg" alt="Sketchbook Page #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #4</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-5.jpg" alt="Sketchbook Page #5">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #5</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-6.jpg" alt="Sketchbook Page #6">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #6</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery gallery-extra" id="sketchbooks-extra">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-7.jpg" alt="Sketchbook Page #7">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #7</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-8.jpg" alt="Sketchbook Page #8">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #8</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-9.jpg" alt="Sketchbook Page #9">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #9</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-10.jpg" alt="Sketchbook Page #10">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #10</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-11.jpg" alt="Sketchbook Page #11">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #11</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-sketchbook-12.jpg" alt="Sketchbook Page #12">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Sketchbook Page #12</span>
+          <div class="artwork-details">Ink/Marker on Paper · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="see-more-btn" onclick="toggleGallery('sketchbooks-extra', this)">See More</button>
+  </section>
+
 
   <div class="divider"></div>
-
-  <section class="contact-section">
-    <h2>Contact</h2>
-
-    <div class="contact-block">
-      <strong>Estate of Louis Thayer Hills</strong>
-      <p>
-        For inquiries regarding the artwork, the artist's legacy, or estate matters:<br>
-        <a href="mailto:mhills33@gmail.com">mhills33@gmail.com</a>
-      </p>
-    </div>
-
-    <div class="contact-block">
-      <strong>Jazz Gallery Center for the Arts</strong>
-      <p>
-        <a href="https://www.google.com/maps/search/?api=1&query=926+E+Center+St+Milwaukee+WI+53212" target="_blank" style="display: inline-block;">
-          📍 926 E Center St<br>
-          &nbsp;&nbsp;&nbsp;Milwaukee, WI 53212
-        </a><br>
-        (414) 374-4722<br>
-        <a href="mailto:info@jazzgallerycenterforarts.org">info@jazzgallerycenterforarts.org</a><br>
-        <a href="https://jazzgallerycenterforarts.org" target="_blank">jazzgallerycenterforarts.org</a>
-      </p>
-    </div>
-  </section>
 
 </div>
 
 <script>
-function openLightbox(src) {
-  document.getElementById('lightbox').classList.add('active');
-  document.getElementById('lightbox-img').src = src;
-}
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
 }
-function toggleSizeSeries() {
-  const extra = document.getElementById('size-series-extra');
-  const btn = document.getElementById('size-series-toggle');
+
+let currentGalleryImages = [];
+let currentGalleryIndex = 0;
+
+function openGalleryLightbox(imgEl) {
+  const container = imgEl.closest('[data-gallery]');
+  const imgs = container ? Array.from(container.querySelectorAll('.gallery-item img')) : [imgEl];
+  currentGalleryImages = imgs.map(i => ({ src: i.getAttribute('src'), alt: i.getAttribute('alt') }));
+  currentGalleryIndex = imgs.indexOf(imgEl);
+  showGalleryImage();
+  document.getElementById('lightbox').classList.add('active');
+}
+
+function showGalleryImage() {
+  const data = currentGalleryImages[currentGalleryIndex];
+  if (!data) return;
+  const img = document.getElementById('lightbox-img');
+  img.src = data.src;
+  img.alt = data.alt || '';
+}
+
+function nextGalleryImage(e) {
+  if (e) e.stopPropagation();
+  if (!currentGalleryImages.length) return;
+  currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
+  showGalleryImage();
+}
+
+function prevGalleryImage(e) {
+  if (e) e.stopPropagation();
+  if (!currentGalleryImages.length) return;
+  currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+  showGalleryImage();
+}
+
+document.addEventListener('keydown', function (e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'ArrowRight') nextGalleryImage(e);
+  if (e.key === 'ArrowLeft') prevGalleryImage(e);
+  if (e.key === 'Escape') closeLightbox();
+});
+
+function toggleGallery(extraId, btn) {
+  const extra = document.getElementById(extraId);
   const expanded = extra.classList.toggle('expanded');
   btn.textContent = expanded ? 'See Less' : 'See More';
   if (!expanded) {
@@ -1349,7 +1344,7 @@ function toggleSizeSeries() {
 }
 </script>
 <script>
-(function() {
+(function () {
   let currentSlide = 0;
   const slides = document.querySelectorAll('.carousel-slide');
   const indicators = document.querySelectorAll('.carousel-indicator');
