@@ -223,6 +223,22 @@
     .event-card a { color: var(--warm-white); border-bottom: 1px solid rgba(255, 255, 255, 0.4); }
     .event-card a:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 
+    .event-card { overflow: hidden; }
+
+    .event-image {
+      display: block;
+      width: calc(100% + 90px);
+      margin: 25px -45px 0 -45px;
+      max-width: none;
+    }
+
+    @media (max-width: 768px) {
+      .event-image {
+        width: calc(100% + 50px);
+        margin: 20px -25px 0 -25px;
+      }
+    }
+
     /* Video section */
     .video-section p { max-width: 650px; }
 
@@ -538,12 +554,8 @@
         On June 5th and 6th, 2026, <a href="https://jazzgallerycenterforarts.org/" target="_blank">Jazz Gallery Center for the Arts</a> opened its doors for a memorial exhibition celebrating the life and six-decade career of Louis Thayer Hills. Family, friends, longtime collectors, and first-time admirers gathered to view his work — and many took a piece of his legacy home with them.
       </p>
     </div>
+    <img src="images/jazz_gallery_show_1.jpg" alt="Jazz Gallery Center for the Arts — exhibition opening" class="event-image">
   </section>
-
-  <!-- ============================================================= -->
-  <!-- SIDEBAR: floats top-left on large screens (>=1200px); on        -->
-  <!-- smaller screens it just flows inline here in the page.          -->
-  <!-- ============================================================= -->
   <div class="sidebar-left">
     <section class="availability-box">
       <h2>Missed the Show?</h2>
@@ -581,14 +593,14 @@
     <p>
       The collection encompasses decades of abstract work across a broad range of media, subjects, and scales.
       From hundreds of pages of ink and marker in spiral-bound notebooks, to oversize masonite paintings 4' x 5',
-      to stacks and stacks of etchings/woodcuts/prints on paper, the offerings range from intimate sketch studies to huge statement pieces.
+      to stacks and stacks of etchings/prints on paper, the offerings range from intimate sketch studies to huge statement pieces.
     </p>
   </section>
 
   <section class="gallery-section size-series-section" data-gallery="size32x48">
     <h2>The 32" X 48" Abstracts — Acrylic on Masonite Series</h2>
     <p style="max-width: 650px; margin: 0 auto 10px;">
-      A comprehensive catalog of 2011–2013 works — all around the same (unframed) size.
+      A comprehensive catalog of 2011–2013 works — all the same (unframed) size.
     </p>
 
     <div class="gallery">
@@ -875,14 +887,14 @@
   <section class="gallery-section etchings-section" data-gallery="etchings">
     <h2>Etchings & Prints</h2>
     <p style="max-width: 650px; margin: 0 auto 10px;">
-      A selection of Hills' work, mainly from 1979-80, completed at UW-Parkside, and other woodcuts and hand-pulled prints spanning multiple decades.
+      A selection of Hills' work on paper, including etchings and hand-pulled prints spanning multiple decades.
     </p>
 
     <div class="gallery">
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-3.jpg" alt="Etching #1">
+          <img src="images/PLACEHOLDER-etching-1.jpg" alt="Etching #1">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #1</span>
@@ -892,7 +904,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-4.jpg" alt="Etching #2">
+          <img src="images/PLACEHOLDER-etching-2.jpg" alt="Etching #2">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #2</span>
@@ -902,7 +914,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-8.jpg" alt="Etching #3">
+          <img src="images/PLACEHOLDER-etching-3.jpg" alt="Etching #3">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #3</span>
@@ -912,7 +924,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-10.jpg.jpg" alt="Etching #4">
+          <img src="images/PLACEHOLDER-etching-4.jpg" alt="Etching #4">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #4</span>
@@ -922,7 +934,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-11.jpg" alt="Etching #5">
+          <img src="images/PLACEHOLDER-etching-5.jpg" alt="Etching #5">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #5</span>
@@ -932,7 +944,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-15.jpg.jpg" alt="Etching #6">
+          <img src="images/PLACEHOLDER-etching-6.jpg" alt="Etching #6">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #6</span>
