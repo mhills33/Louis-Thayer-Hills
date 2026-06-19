@@ -481,6 +481,35 @@
       font-weight: 500;
     }
 
+    /* Collapsible "See More" gallery extension (used by the 32x48 series) */
+    .gallery.gallery-extra {
+      display: none;
+    }
+
+    .gallery.gallery-extra.expanded {
+      display: grid;
+    }
+
+    .see-more-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 36px;
+      background: var(--charcoal);
+      color: var(--warm-white);
+      border: none;
+      border-radius: 2px;
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .see-more-btn:hover {
+      background: var(--accent-rust);
+    }
+
     /* SOLD ribbon — shared look, two contexts:
        - small gallery thumbnails: add class="sold" to the .gallery-item div
        - full-size carousel slides: add class="sold" to the .carousel-slide div */
@@ -728,10 +757,8 @@
     </div>
 
     <p class="hero-text">
-      Louis Thayer Hills was a prolific Wisconsin artist whose work spanned more than six decades, creating abstract paintings and prints inspired by the landscapes and natural beauty of his beloved home state. Beginning in the 1950s, he produced a substantial and wide-ranging body of drawings, sketches, sculptures, paintings, and prints deeply rooted in southeastern Wisconsin.
-      Hills' abstract artistic evolution mirrored the essence of Wisconsin itself—from the dark, brooding tones inspired by winter forests in his early oil paintings to the explosive colors drawn from prairie wildflowers and autumn foliage in his later acrylics. His mixed media works often incorporated natural materials and textures found in the Wisconsin countryside, translating the spirit of the land into bold, abstract expressions.
-      Working from his home in southeastern Wisconsin, which he shared with his wife Kay, Hills drew continuous inspiration from the rolling farmlands, woodlands, and rural character that defined the region. His abstract compositions distilled the energy and color of Wisconsin's natural landscape into dynamic visual expressions, creating a unique artistic legacy as a Wisconsin abstract artist.
-      This site honors his artistic legacy and shares information about the memorial exhibition and art sale, an opportunity for collectors to acquire original works directly from the estate.
+      Louis Thayer Hills was a prolific Wisconsin artist who spent more than six decades creating purely abstract paintings and prints — compositions drawn entirely from his own imagination rather than the world around him. His style evolved dramatically over the decades, moving from the dark, brooding tones of his early oils to the bold, explosive color and energy of his later acrylics.
+      Working from his home in southeastern Wisconsin with his wife Kay, Hills left behind a singular and deeply personal body of abstract work.
     </p>
   </div>
 
@@ -777,7 +804,7 @@
   <!-- ============================================= -->
   <section class="video-section">
     <h2>Watch: A Life in Art</h2>
-    <p>A short film exploring Louis Thayer Hills' six decades of work, his life in southeastern Wisconsin, and the landscape that shaped his abstract vision.</p>
+    <p>A short film exploring Louis Thayer Hills' six decades of work and the singular imagination behind his abstract vision.</p>
     <div class="video-wrapper">
       <iframe
         src="https://www.youtube.com/embed/lVSseqWk3JU"
@@ -817,74 +844,330 @@
   <!-- ribbon, e.g. <div class="gallery-item sold"> ... </div>          -->
   <!-- ============================================================= -->
   <section class="gallery-section size-series-section">
-    <h2>[UNDER CONSTRUCTION] The 32" X 48" Abstracts - Acrylic on Masonite Series</h2>
+    <h2>The 32" X 48" Abstracts — Acrylic on Masonite Series</h2>
     <p style="max-width: 650px; margin: 0 auto 10px;">
-      A comprehensive catalog of 2011-2013 works - all are the same (unframed) size.
+      A comprehensive catalog of 2011–2013 works — all the same (unframed) size.
     </p>
 
     <div class="gallery">
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-1.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-1.jpg" alt="Untitled #1">
+        <a href="images/Image_1_32_x_48.jpg" target="_blank">
+          <img src="images/Image_1_32_x_48.jpg" alt="Acrylic Abstract #1">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #1</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #1</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-2.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-2.jpg" alt="Untitled #2">
+        <a href="images/Image_2_32_x_48.jpg" target="_blank">
+          <img src="images/Image_2_32_x_48.jpg" alt="Acrylic Abstract #2">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #2</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #2</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-3.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-3.jpg" alt="Untitled #3">
+        <a href="images/Image_3_32_x_48.jpg" target="_blank">
+          <img src="images/Image_3_32_x_48.jpg" alt="Acrylic Abstract #3">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #3</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #3</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-4.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-4.jpg" alt="Untitled #4">
+        <a href="images/Image_4_32_x_48.jpg" target="_blank">
+          <img src="images/Image_4_32_x_48.jpg" alt="Acrylic Abstract #4">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #4</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #4</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-5.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-5.jpg" alt="Untitled #5">
+        <a href="images/Image_5_32_x_48.jpg" target="_blank">
+          <img src="images/Image_5_32_x_48.jpg" alt="Acrylic Abstract #5">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #5</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #5</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
       <div class="gallery-item">
-        <a href="images/SIZE-SERIES-6.jpg" target="_blank">
-          <img src="images/SIZE-SERIES-6.jpg" alt="Untitled #6">
+        <a href="images/Image_6_32_x_48.jpg" target="_blank">
+          <img src="images/Image_6_32_x_48.jpg" alt="Acrylic Abstract #6">
         </a>
         <div class="gallery-caption">
-          <span class="artwork-title">Untitled #6</span>
-          <div class="artwork-details">[Medium] · [Year]</div>
+          <span class="artwork-title">Acrylic Abstract #6</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_7_32_x_48.jpg" target="_blank">
+          <img src="images/Image_7_32_x_48.jpg" alt="Acrylic Abstract #7">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #7</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_8_32_x_48.jpg" target="_blank">
+          <img src="images/Image_8_32_x_48.jpg" alt="Acrylic Abstract #8">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #8</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_9_32_x_48.jpg" target="_blank">
+          <img src="images/Image_9_32_x_48.jpg" alt="Acrylic Abstract #9">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #9</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
         </div>
       </div>
 
     </div>
+
+    <div class="gallery gallery-extra" id="size-series-extra">
+
+      <div class="gallery-item">
+        <a href="images/Image_10_32_x_48.jpg" target="_blank">
+          <img src="images/Image_10_32_x_48.jpg" alt="Acrylic Abstract #10">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #10</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_11_32_x_48.jpg" target="_blank">
+          <img src="images/Image_11_32_x_48.jpg" alt="Acrylic Abstract #11">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #11</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_12_32_x_48.jpg" target="_blank">
+          <img src="images/Image_12_32_x_48.jpg" alt="Acrylic Abstract #12">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #12</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_13_32_x_48.jpg" target="_blank">
+          <img src="images/Image_13_32_x_48.jpg" alt="Acrylic Abstract #13">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #13</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_14_32_x_48.jpg" target="_blank">
+          <img src="images/Image_14_32_x_48.jpg" alt="Acrylic Abstract #14">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #14</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_15_32_x_48.jpg" target="_blank">
+          <img src="images/Image_15_32_x_48.jpg" alt="Acrylic Abstract #15">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #15</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_16_32_x_48.jpg" target="_blank">
+          <img src="images/Image_16_32_x_48.jpg" alt="Acrylic Abstract #16">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #16</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_17_32_x_48.jpg" target="_blank">
+          <img src="images/Image_17_32_x_48.jpg" alt="Acrylic Abstract #17">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #17</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_18_32_x_48.jpg" target="_blank">
+          <img src="images/Image_18_32_x_48.jpg" alt="Acrylic Abstract #18">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #18</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_19_32_x_48.jpg" target="_blank">
+          <img src="images/Image_19_32_x_48.jpg" alt="Acrylic Abstract #19">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #19</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_20_32_x_48.jpg" target="_blank">
+          <img src="images/Image_20_32_x_48.jpg" alt="Acrylic Abstract #20">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #20</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_21_32_x_48.jpg" target="_blank">
+          <img src="images/Image_21_32_x_48.jpg" alt="Acrylic Abstract #21">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #21</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_22_32_x_48.jpg" target="_blank">
+          <img src="images/Image_22_32_x_48.jpg" alt="Acrylic Abstract #22">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #22</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_23_32_x_48.jpg" target="_blank">
+          <img src="images/Image_23_32_x_48.jpg" alt="Acrylic Abstract #23">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #23</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_24_32_x_48.jpg" target="_blank">
+          <img src="images/Image_24_32_x_48.jpg" alt="Acrylic Abstract #24">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #24</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_25_32_x_48.jpg" target="_blank">
+          <img src="images/Image_25_32_x_48.jpg" alt="Acrylic Abstract #25">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #25</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_26_32_x_48.jpg" target="_blank">
+          <img src="images/Image_26_32_x_48.jpg" alt="Acrylic Abstract #26">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #26</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_27_32_x_48.jpg" target="_blank">
+          <img src="images/Image_27_32_x_48.jpg" alt="Acrylic Abstract #27">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #27</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_28_32_x_48.jpg" target="_blank">
+          <img src="images/Image_28_32_x_48.jpg" alt="Acrylic Abstract #28">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #28</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_29_32_x_48.jpg" target="_blank">
+          <img src="images/Image_29_32_x_48.jpg" alt="Acrylic Abstract #29">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #29</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_30_32_x_48.jpg" target="_blank">
+          <img src="images/Image_30_32_x_48.jpg" alt="Acrylic Abstract #30">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #30</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Image_31_32_x_48.jpg" target="_blank">
+          <img src="images/Image_31_32_x_48.jpg" alt="Acrylic Abstract #31">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Acrylic Abstract #31</span>
+          <div class="artwork-details">Acrylic on Masonite · 2011–2013</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="see-more-btn" id="size-series-toggle" onclick="toggleSizeSeries()">See More</button>
   </section>
 
   <div class="image-row">
@@ -1094,6 +1377,15 @@ function openLightbox(src) {
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
+}
+function toggleSizeSeries() {
+  const extra = document.getElementById('size-series-extra');
+  const btn = document.getElementById('size-series-toggle');
+  const expanded = extra.classList.toggle('expanded');
+  btn.textContent = expanded ? 'See Less' : 'See More';
+  if (!expanded) {
+    extra.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 }
 </script>
 <script>
