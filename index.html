@@ -25,6 +25,8 @@
       --warm-taupe: #c4b5a8;
       --soft-lavender: #b8afc4;
       --muted-coral: #d4a59a;
+      --warm-ochre: #cbb682;
+      --dusty-plum: #ad96a8;
 
       --text-dark: #2a2826;
       --text-medium: #3d3a38;
@@ -288,6 +290,20 @@
     section.smaller-section p { color: var(--text-dark); }
     section.smaller-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
     section.smaller-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
+
+    section.oversize-section { background: var(--warm-ochre); }
+    section.oversize-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    section.oversize-section h2::after { background: var(--text-dark); }
+    section.oversize-section p { color: var(--text-dark); }
+    section.oversize-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    section.oversize-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
+
+    section.early-work-section { background: var(--dusty-plum); }
+    section.early-work-section h2 { color: var(--text-dark); border-bottom-color: rgba(42, 40, 38, 0.25); }
+    section.early-work-section h2::after { background: var(--text-dark); }
+    section.early-work-section p { color: var(--text-dark); }
+    section.early-work-section a { color: var(--text-dark); border-bottom: 1px solid rgba(42, 40, 38, 0.3); }
+    section.early-work-section a:hover { border-bottom-color: var(--text-dark); opacity: 0.8; }
 
     /* Links (default) */
     a {
@@ -894,7 +910,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-20.jpg" alt="Etching #1">
+          <img src="images/lth-03.jpg" alt="Etching #1">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #1</span>
@@ -904,7 +920,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-21.jpg" alt="Etching #2">
+          <img src="images/lth-04.jpg" alt="Etching #2">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #2</span>
@@ -914,7 +930,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-24.jpg" alt="Etching #3">
+          <img src="images/lth-08.jpg" alt="Etching #3">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #3</span>
@@ -958,7 +974,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-03.jpg" alt="Etching #7">
+          <img src="images/PLACEHOLDER-etching-7.jpg" alt="Etching #7">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #7</span>
@@ -968,7 +984,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-04.jpg" alt="Etching #8">
+          <img src="images/PLACEHOLDER-etching-8.jpg" alt="Etching #8">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #8</span>
@@ -978,7 +994,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-08.jpg" alt="Etching #9">
+          <img src="images/PLACEHOLDER-etching-9.jpg" alt="Etching #9">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #9</span>
@@ -988,7 +1004,7 @@
 
       <div class="gallery-item">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
-          <img src="images/lth-22.jpg" alt="Etching #10">
+          <img src="images/PLACEHOLDER-etching-10.jpg" alt="Etching #10">
         </a>
         <div class="gallery-caption">
           <span class="artwork-title">Etching #10</span>
@@ -1295,6 +1311,147 @@
     <button class="see-more-btn" onclick="toggleGallery('sketchbooks-extra', this)">See More</button>
   </section>
 
+  <section class="gallery-section oversize-section" data-gallery="oversize">
+    <h2>Oversize — 48" x 48" and Larger</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      The largest statement pieces in the collection — bold masonite abstracts at 48 inches and up.
+    </p>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-1.jpg" alt="Oversize Abstract #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #1</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-2.jpg" alt="Oversize Abstract #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #2</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-3.jpg" alt="Oversize Abstract #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #3</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-4.jpg" alt="Oversize Abstract #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #4</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-5.jpg" alt="Oversize Abstract #5">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #5</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-oversize-6.jpg" alt="Oversize Abstract #6">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Oversize Abstract #6</span>
+          <div class="artwork-details">Acrylic on Masonite · [Year]</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="gallery-section early-work-section" data-gallery="earlywork">
+    <h2>Early Work</h2>
+    <p style="max-width: 650px; margin: 0 auto 10px;">
+      Prints, paintings, and drawings from the 1950s and '60s — the earliest works in the collection.
+    </p>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-1.jpg" alt="Early Work #1">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #1</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-2.jpg" alt="Early Work #2">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #2</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-3.jpg" alt="Early Work #3">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #3</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-4.jpg" alt="Early Work #4">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #4</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-5.jpg" alt="Early Work #5">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #5</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <a onclick="openGalleryLightbox(this.querySelector('img'))">
+          <img src="images/PLACEHOLDER-earlywork-6.jpg" alt="Early Work #6">
+        </a>
+        <div class="gallery-caption">
+          <span class="artwork-title">Early Work #6</span>
+          <div class="artwork-details">[Medium] · 1950s–1960s</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <div class="divider"></div>
 
