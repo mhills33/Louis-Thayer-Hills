@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mhills33.github.io/Louis-Thayer-Hills/sitemap.xml
