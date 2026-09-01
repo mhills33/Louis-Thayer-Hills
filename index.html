@@ -48,7 +48,7 @@
       --text-dark: #2a2826;
       --text-medium: #3d3a38;
 
-      --sold-red: #a81c1c;
+      ---red: #a81c1c;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -390,7 +390,7 @@
     }
     .see-more-btn:hover { background: var(--accent-rust); }
 
-    /* SOLD ribbon */
+    /*  ribbon */
     .gallery-item.sold a::after,
     .carousel-slide.sold::after {
       content: 'SOLD';
@@ -638,7 +638,7 @@
 
     <div class="gallery">
 
-      <div class="gallery-item">
+    <div class="gallery-item sold">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/new_32_by_48_12.jpg" alt="Acrylic Abstract #1">
         </a>
@@ -792,7 +792,7 @@
         </div>
       </div>
 
-      <div class="gallery-item">
+      <div class="gallery-item sold">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/Image_20_32_x_48.jpg" alt="Acrylic Abstract #16">
         </a>
@@ -965,7 +965,7 @@
         </div>
       </div>
 
-      <div class="gallery-item">
+     <div class="gallery-item sold">
         <a onclick="openGalleryLightbox(this.querySelector('img'))">
           <img src="images/lth-11.jpg" alt="Etching #5">
         </a>
